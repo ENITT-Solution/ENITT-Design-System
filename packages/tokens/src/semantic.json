@@ -3,24 +3,24 @@
   "color": {
     "bg": {
       "canvas": {
-        "light": "{color.neutral.50}",
-        "dark": "{color.neutral.950}"
+        "light": "{color.gray.100}",
+        "dark": "{color.gray.1000}"
       },
       "surface": {
-        "light": "{color.neutral.0}",
-        "dark": "{color.neutral.900}"
+        "light": "{color.gray.00}",
+        "dark": "{color.gray.900}"
       },
       "raised": {
-        "light": "{color.neutral.0}",
-        "dark": "{color.neutral.870}"
+        "light": "{color.gray.00}",
+        "dark": "{color.gray.800}"
       },
       "sunken": {
-        "light": "{color.neutral.50}",
-        "dark": "{color.neutral.1000}"
+        "light": "{color.gray.100}",
+        "dark": "{color.gray.1000}"
       },
       "muted": {
-        "light": "{color.neutral.100}",
-        "dark": "{color.neutral.850}"
+        "light": "{color.gray.200}",
+        "dark": "{color.gray.900}"
       },
       "hover": {
         "light": "rgba(13, 17, 23, 0.04)",
@@ -31,7 +31,7 @@
         "dark": "rgba(255, 255, 255, 0.10)"
       },
       "selected": {
-        "light": "{color.blue.50}",
+        "light": "{color.blue.100}",
         "dark": "rgba(57, 135, 229, 0.16)"
       },
       "overlay": {
@@ -39,130 +39,130 @@
         "dark": "rgba(5, 8, 13, 0.65)"
       },
       "disabled": {
-        "light": "{color.neutral.100}",
-        "dark": "{color.neutral.850}"
+        "light": "{color.gray.200}",
+        "dark": "{color.gray.900}"
       }
     },
     "fg": {
       "default": {
-        "light": "{color.neutral.870}",
-        "dark": "{color.neutral.100}"
+        "light": "{color.gray.900}",
+        "dark": "{color.gray.200}"
       },
       "muted": {
-        "light": "{color.neutral.700}",
-        "dark": "{color.neutral.300}"
+        "light": "{color.gray.800}",
+        "dark": "{color.gray.400}"
       },
       "subtle": {
-        "light": "{color.neutral.600}",
-        "dark": "{color.neutral.500}"
+        "light": "{color.gray.700}",
+        "dark": "{color.gray.500}"
       },
       "disabled": {
-        "light": "{color.neutral.500}",
-        "dark": "{color.neutral.600}"
+        "light": "{color.gray.700}",
+        "dark": "{color.gray.600}"
       },
       "on-accent": {
-        "light": "{color.neutral.0}",
-        "dark": "{color.neutral.0}"
+        "light": "{color.gray.00}",
+        "dark": "{color.gray.00}"
       },
       "inverse": {
-        "light": "{color.neutral.0}",
-        "dark": "{color.neutral.900}"
+        "light": "{color.gray.00}",
+        "dark": "{color.gray.900}"
       }
     },
     "border": {
       "subtle": {
-        "light": "{color.neutral.100}",
-        "dark": "{color.neutral.850}"
+        "light": "{color.gray.200}",
+        "dark": "{color.gray.900}"
       },
       "default": {
-        "light": "{color.neutral.200}",
-        "dark": "{color.neutral.800}"
+        "light": "{color.gray.300}",
+        "dark": "{color.gray.800}"
       },
       "strong": {
-        "light": "{color.neutral.300}",
-        "dark": "{color.neutral.750}"
+        "light": "{color.gray.400}",
+        "dark": "{color.gray.700}"
       },
       "focus": {
-        "light": "{color.blue.450}",
-        "dark": "{color.blue.400}"
+        "light": "{color.blue.800}",
+        "dark": "{color.blue.600}"
       }
     },
     "accent": {
       "solid": {
-        "light": "{color.blue.500}",
-        "dark": "{color.blue.500}"
+        "light": "{color.blue.800}",
+        "dark": "{color.blue.800}"
       },
       "solid-hover": {
-        "light": "{color.blue.600}",
-        "dark": "{color.blue.400}"
+        "light": "{color.blue.900}",
+        "dark": "{color.blue.700}"
       },
       "solid-active": {
-        "light": "{color.blue.700}",
-        "dark": "{color.blue.600}"
+        "light": "{color.blue.1000}",
+        "dark": "{color.blue.800}"
       },
       "fg": {
-        "light": "{color.blue.600}",
-        "dark": "{color.blue.300}"
-      },
-      "border": {
-        "light": "{color.blue.450}",
+        "light": "{color.blue.900}",
         "dark": "{color.blue.400}"
       },
+      "border": {
+        "light": "{color.blue.800}",
+        "dark": "{color.blue.600}"
+      },
       "bg": {
-        "light": "{color.blue.50}",
+        "light": "{color.blue.100}",
         "dark": "rgba(57, 135, 229, 0.14)"
       }
     },
     "status": {
       "normal": {
-        "light": "{color.green.500}",
+        "light": "{color.green.600}",
         "dark": "{color.green.500}"
       },
       "info": {
-        "light": "{color.blue.450}",
-        "dark": "{color.blue.400}"
+        "light": "{color.blue.800}",
+        "dark": "{color.blue.600}"
       },
       "warning": {
-        "light": "{color.amber.400}",
-        "dark": "{color.amber.400}"
+        "light": "{color.yellow.500}",
+        "dark": "{color.yellow.400}"
       },
       "serious": {
-        "light": "{color.orange.450}",
-        "dark": "{color.orange.450}"
+        "light": "{color.orange.600}",
+        "dark": "{color.orange.500}"
       },
       "critical": {
-        "light": "{color.red.500}",
-        "dark": "{color.red.500}"
+        "light": "{color.red.700}",
+        "dark": "{color.red.600}"
       },
       "unknown": {
-        "light": "{color.neutral.550}",
-        "dark": "{color.neutral.500}"
+        "light": "{color.gray.700}",
+        "dark": "{color.gray.600}"
       }
     },
     "status-fg": {
       "normal": {
-        "light": "{color.green.600}",
+        "light": "{color.green.700}",
         "dark": "{color.green.400}"
       },
       "info": {
-        "light": "{color.blue.600}",
-        "dark": "{color.blue.300}"
+        "light": "{color.blue.900}",
+        "dark": "{color.blue.400}"
       },
       "warning": {
-        "light": "{color.amber.600}",
-        "dark": "{color.amber.400}"
+        "light": "{color.yellow.800}",
+        "dark": "{color.yellow.400}"
       },
       "serious": {
-        "light": "{color.orange.700}",
-        "dark": "{color.orange.400}"
+        "light": "{color.orange.800}",
+        "dark": "{color.orange.500}"
       },
       "critical": {
-        "light": "{color.red.600}",
-        "dark": "{color.red.300}"
+        "light": "{color.red.800}",
+        "dark": "{color.red.400}"
       },
       "unknown": {
-        "light": "{color.neutral.700}",
-        "dark": "{color.neutral.400}"
+        "light": "{color.gray.800}",
+        "dark": "{color.gray.600}"
       }
     },
     "status-bg": {
@@ -192,54 +192,54 @@
       }
     },
     "chart": {
-      "$description": "dataviz 검증 통과 — 라이트 #ffffff / 다크 #161b22 표면 기준, 인접쌍 CVD ΔE 9.1/8.4. 슬롯 순서를 바꾸거나 순환 배정하지 말 것.",
+      "$description": "8색 고정 슬롯. 슬롯 순서를 바꾸거나 순환 배정하지 말 것. 팔레트 변경 후 표면 대비와 색각 안전성을 다시 검증한다.",
       "series-1": {
-        "light": "{color.blue.450}",
-        "dark": "{color.blue.400}"
+        "light": "{color.blue.800}",
+        "dark": "{color.blue.600}"
       },
       "series-2": {
-        "light": "{color.orange.500}",
-        "dark": "{color.orange.550}"
+        "light": "{color.orange.600}",
+        "dark": "{color.orange.500}"
       },
       "series-3": {
-        "light": "{color.aqua.400}",
-        "dark": "{color.aqua.500}"
+        "light": "{color.indigo.700}",
+        "dark": "{color.indigo.500}"
       },
       "series-4": {
-        "light": "{color.yellow.400}",
-        "dark": "{color.yellow.500}"
+        "light": "{color.yellow.600}",
+        "dark": "{color.yellow.400}"
       },
       "series-5": {
-        "light": "{color.magenta.400}",
-        "dark": "{color.magenta.500}"
+        "light": "{color.violet.700}",
+        "dark": "{color.violet.500}"
       },
       "series-6": {
         "light": "{color.green.700}",
-        "dark": "{color.green.700}"
+        "dark": "{color.green.500}"
       },
       "series-7": {
-        "light": "{color.violet.600}",
-        "dark": "{color.violet.300}"
+        "light": "{color.red.700}",
+        "dark": "{color.red.500}"
       },
       "series-8": {
-        "light": "{color.red.450}",
-        "dark": "{color.red.400}"
+        "light": "{color.gray.800}",
+        "dark": "{color.gray.500}"
       },
       "grid": {
-        "light": "{color.neutral.100}",
-        "dark": "{color.neutral.850}"
+        "light": "{color.gray.200}",
+        "dark": "{color.gray.900}"
       },
       "axis": {
-        "light": "{color.neutral.300}",
-        "dark": "{color.neutral.750}"
+        "light": "{color.gray.400}",
+        "dark": "{color.gray.700}"
       },
       "threshold": {
-        "light": "{color.red.500}",
-        "dark": "{color.red.400}"
+        "light": "{color.red.700}",
+        "dark": "{color.red.500}"
       },
       "surface": {
-        "light": "{color.neutral.0}",
-        "dark": "{color.neutral.900}"
+        "light": "{color.gray.00}",
+        "dark": "{color.gray.900}"
       }
     }
   },

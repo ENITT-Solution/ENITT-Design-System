@@ -84,6 +84,6 @@
   /* 밝은 노랑/주황 위에서는 흰 글씨가 읽히지 않는다 — 어두운 글씨로 뒤집는다 */
   .enitt-badge--solid.enitt-badge--warning,
   .enitt-badge--solid.enitt-badge--serious {
-    color: var(--enitt-palette-neutral-1000);
+    color: var(--enitt-palette-gray-1000);
   }
 }
