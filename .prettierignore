@@ -3,3 +3,7 @@ storybook-static
 coverage
 .turbo
 pnpm-lock.yaml
+
+# 생성물 — 형식은 생성기가 소유한다. prettier 가 다시 들여쓰면
+# 빌드할 때마다 의미 없는 diff 가 난다.
+packages/tokens/src/generated

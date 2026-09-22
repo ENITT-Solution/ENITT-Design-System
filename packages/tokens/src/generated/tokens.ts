@@ -19,7 +19,7 @@ export const tokens = {
       active: 'var(--enitt-color-bg-active)',
       selected: 'var(--enitt-color-bg-selected)',
       overlay: 'var(--enitt-color-bg-overlay)',
-      disabled: 'var(--enitt-color-bg-disabled)',
+      disabled: 'var(--enitt-color-bg-disabled)'
     },
     fg: {
       default: 'var(--enitt-color-fg-default)',
@@ -27,13 +27,13 @@ export const tokens = {
       subtle: 'var(--enitt-color-fg-subtle)',
       disabled: 'var(--enitt-color-fg-disabled)',
       'on-accent': 'var(--enitt-color-fg-on-accent)',
-      inverse: 'var(--enitt-color-fg-inverse)',
+      inverse: 'var(--enitt-color-fg-inverse)'
     },
     border: {
       subtle: 'var(--enitt-color-border-subtle)',
       default: 'var(--enitt-color-border-default)',
       strong: 'var(--enitt-color-border-strong)',
-      focus: 'var(--enitt-color-border-focus)',
+      focus: 'var(--enitt-color-border-focus)'
     },
     accent: {
       solid: 'var(--enitt-color-accent-solid)',
@@ -41,7 +41,7 @@ export const tokens = {
       'solid-active': 'var(--enitt-color-accent-solid-active)',
       fg: 'var(--enitt-color-accent-fg)',
       border: 'var(--enitt-color-accent-border)',
-      bg: 'var(--enitt-color-accent-bg)',
+      bg: 'var(--enitt-color-accent-bg)'
     },
     status: {
       normal: 'var(--enitt-color-status-normal)',
@@ -49,7 +49,7 @@ export const tokens = {
       warning: 'var(--enitt-color-status-warning)',
       serious: 'var(--enitt-color-status-serious)',
       critical: 'var(--enitt-color-status-critical)',
-      unknown: 'var(--enitt-color-status-unknown)',
+      unknown: 'var(--enitt-color-status-unknown)'
     },
     'status-fg': {
       normal: 'var(--enitt-color-status-fg-normal)',
@@ -57,7 +57,7 @@ export const tokens = {
       warning: 'var(--enitt-color-status-fg-warning)',
       serious: 'var(--enitt-color-status-fg-serious)',
       critical: 'var(--enitt-color-status-fg-critical)',
-      unknown: 'var(--enitt-color-status-fg-unknown)',
+      unknown: 'var(--enitt-color-status-fg-unknown)'
     },
     'status-bg': {
       normal: 'var(--enitt-color-status-bg-normal)',
@@ -65,7 +65,7 @@ export const tokens = {
       warning: 'var(--enitt-color-status-bg-warning)',
       serious: 'var(--enitt-color-status-bg-serious)',
       critical: 'var(--enitt-color-status-bg-critical)',
-      unknown: 'var(--enitt-color-status-bg-unknown)',
+      unknown: 'var(--enitt-color-status-bg-unknown)'
     },
     chart: {
       'series-1': 'var(--enitt-color-chart-series-1)',
@@ -79,16 +79,16 @@ export const tokens = {
       grid: 'var(--enitt-color-chart-grid)',
       axis: 'var(--enitt-color-chart-axis)',
       threshold: 'var(--enitt-color-chart-threshold)',
-      surface: 'var(--enitt-color-chart-surface)',
-    },
+      surface: 'var(--enitt-color-chart-surface)'
+    }
   },
   shadow: {
     xs: 'var(--enitt-shadow-xs)',
     sm: 'var(--enitt-shadow-sm)',
     md: 'var(--enitt-shadow-md)',
     lg: 'var(--enitt-shadow-lg)',
-    focus: 'var(--enitt-shadow-focus)',
-  },
+    focus: 'var(--enitt-shadow-focus)'
+  }
 } as const;
 
 /** 간격 · 반경 · 타이포그래피 · 모션 → CSS 커스텀 프로퍼티 참조. */
@@ -110,7 +110,7 @@ export const dimensions = {
     px: 'var(--enitt-space-px)',
     '0_5': 'var(--enitt-space-0_5)',
     '1_5': 'var(--enitt-space-1_5)',
-    '2_5': 'var(--enitt-space-2_5)',
+    '2_5': 'var(--enitt-space-2_5)'
   },
   radius: {
     none: 'var(--enitt-radius-none)',
@@ -120,18 +120,18 @@ export const dimensions = {
     lg: 'var(--enitt-radius-lg)',
     xl: 'var(--enitt-radius-xl)',
     '2xl': 'var(--enitt-radius-2xl)',
-    full: 'var(--enitt-radius-full)',
+    full: 'var(--enitt-radius-full)'
   },
   'border-width': {
     none: 'var(--enitt-border-width-none)',
     thin: 'var(--enitt-border-width-thin)',
     thick: 'var(--enitt-border-width-thick)',
-    heavy: 'var(--enitt-border-width-heavy)',
+    heavy: 'var(--enitt-border-width-heavy)'
   },
   'font-family': {
     sans: 'var(--enitt-font-family-sans)',
     mono: 'var(--enitt-font-family-mono)',
-    numeric: 'var(--enitt-font-family-numeric)',
+    numeric: 'var(--enitt-font-family-numeric)'
   },
   'font-size': {
     '2xs': 'var(--enitt-font-size-2xs)',
@@ -143,37 +143,37 @@ export const dimensions = {
     '2xl': 'var(--enitt-font-size-2xl)',
     '3xl': 'var(--enitt-font-size-3xl)',
     '4xl': 'var(--enitt-font-size-4xl)',
-    '5xl': 'var(--enitt-font-size-5xl)',
+    '5xl': 'var(--enitt-font-size-5xl)'
   },
   'font-weight': {
     regular: 'var(--enitt-font-weight-regular)',
     medium: 'var(--enitt-font-weight-medium)',
     semibold: 'var(--enitt-font-weight-semibold)',
-    bold: 'var(--enitt-font-weight-bold)',
+    bold: 'var(--enitt-font-weight-bold)'
   },
   'line-height': {
     tight: 'var(--enitt-line-height-tight)',
     snug: 'var(--enitt-line-height-snug)',
     normal: 'var(--enitt-line-height-normal)',
-    relaxed: 'var(--enitt-line-height-relaxed)',
+    relaxed: 'var(--enitt-line-height-relaxed)'
   },
   'letter-spacing': {
     tight: 'var(--enitt-letter-spacing-tight)',
     normal: 'var(--enitt-letter-spacing-normal)',
     wide: 'var(--enitt-letter-spacing-wide)',
-    wider: 'var(--enitt-letter-spacing-wider)',
+    wider: 'var(--enitt-letter-spacing-wider)'
   },
   duration: {
     instant: 'var(--enitt-duration-instant)',
     fast: 'var(--enitt-duration-fast)',
     normal: 'var(--enitt-duration-normal)',
     slow: 'var(--enitt-duration-slow)',
-    pulse: 'var(--enitt-duration-pulse)',
+    pulse: 'var(--enitt-duration-pulse)'
   },
   easing: {
     standard: 'var(--enitt-easing-standard)',
     enter: 'var(--enitt-easing-enter)',
-    exit: 'var(--enitt-easing-exit)',
+    exit: 'var(--enitt-easing-exit)'
   },
   'z-index': {
     base: 'var(--enitt-z-index-base)',
@@ -182,7 +182,7 @@ export const dimensions = {
     overlay: 'var(--enitt-z-index-overlay)',
     modal: 'var(--enitt-z-index-modal)',
     toast: 'var(--enitt-z-index-toast)',
-    tooltip: 'var(--enitt-z-index-tooltip)',
+    tooltip: 'var(--enitt-z-index-tooltip)'
   },
   size: {
     'control-sm': 'var(--enitt-size-control-sm)',
@@ -190,8 +190,8 @@ export const dimensions = {
     'control-lg': 'var(--enitt-size-control-lg)',
     'icon-sm': 'var(--enitt-size-icon-sm)',
     'icon-md': 'var(--enitt-size-icon-md)',
-    'icon-lg': 'var(--enitt-size-icon-lg)',
-  },
+    'icon-lg': 'var(--enitt-size-icon-lg)'
+  }
 } as const;
 
 /** 원시 팔레트의 실제 hex 값. canvas 렌더링처럼 var() 를 못 쓰는 곳에서만 사용한다. */
@@ -215,7 +215,7 @@ export const palette = {
     '870': '#1c2128',
     '900': '#161b22',
     '950': '#0d1117',
-    '1000': '#05080d',
+    '1000': '#05080d'
   },
   blue: {
     '50': '#eef5fd',
@@ -228,48 +228,48 @@ export const palette = {
     '600': '#1c5cab',
     '700': '#184f95',
     '800': '#104281',
-    '900': '#0d366b',
+    '900': '#0d366b'
   },
   green: {
     '400': '#2fd44f',
     '500': '#0ca30c',
     '600': '#0a7a0a',
-    '700': '#006300',
+    '700': '#006300'
   },
   amber: {
     '400': '#fab219',
-    '600': '#8a5a00',
+    '600': '#8a5a00'
   },
   orange: {
     '400': '#f0a07a',
     '450': '#ec835a',
     '500': '#eb6834',
     '550': '#d95926',
-    '700': '#a34a22',
+    '700': '#a34a22'
   },
   red: {
     '300': '#f08585',
     '400': '#e66767',
     '450': '#e34948',
     '500': '#d03b3b',
-    '600': '#c02626',
+    '600': '#c02626'
   },
   violet: {
     '300': '#9085e9',
-    '600': '#4a3aa7',
+    '600': '#4a3aa7'
   },
   aqua: {
     '400': '#1baf7a',
-    '500': '#199e70',
+    '500': '#199e70'
   },
   magenta: {
     '400': '#e87ba4',
-    '500': '#d55181',
+    '500': '#d55181'
   },
   yellow: {
     '400': '#eda100',
-    '500': '#c98500',
-  },
+    '500': '#c98500'
+  }
 } as const;
 
 /** 테마별 CSS 변수 실측값. SSR 인라인 스타일이나 이미지 내보내기에 쓴다. */
@@ -335,8 +335,8 @@ export const themeValues = {
     '--enitt-shadow-sm': '0 1px 3px rgba(13, 17, 23, 0.10), 0 1px 2px rgba(13, 17, 23, 0.06)',
     '--enitt-shadow-md': '0 4px 12px rgba(13, 17, 23, 0.10)',
     '--enitt-shadow-lg': '0 12px 28px rgba(13, 17, 23, 0.14)',
-    '--enitt-shadow-focus': '0 0 0 3px rgba(42, 120, 214, 0.35)',
-  },
+    '--enitt-shadow-focus': '0 0 0 3px rgba(42, 120, 214, 0.35)'
+},
   dark: {
     '--enitt-color-bg-canvas': '#0d1117',
     '--enitt-color-bg-surface': '#161b22',
@@ -398,8 +398,8 @@ export const themeValues = {
     '--enitt-shadow-sm': '0 1px 3px rgba(0, 0, 0, 0.50)',
     '--enitt-shadow-md': '0 4px 12px rgba(0, 0, 0, 0.55)',
     '--enitt-shadow-lg': '0 12px 28px rgba(0, 0, 0, 0.65)',
-    '--enitt-shadow-focus': '0 0 0 3px rgba(57, 135, 229, 0.45)',
-  },
+    '--enitt-shadow-focus': '0 0 0 3px rgba(57, 135, 229, 0.45)'
+},
 } as const;
 
 /** 차트 시리즈 색상 — 고정 순서. 순환 배정하지 말 것 (9번째 계열은 '기타'로 묶는다). */

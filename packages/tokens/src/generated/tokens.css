@@ -18,214 +18,278 @@
 @layer enitt.tokens, enitt.presets;
 
 @layer enitt.tokens {
-  :root {
-    /* ── 팔레트 (원시 색상 — 컴포넌트에서 직접 쓰지 말 것) ────────────── */
-    --enitt-palette-neutral-0: #ffffff;
-    --enitt-palette-neutral-25: #fafbfc;
-    --enitt-palette-neutral-50: #f5f7fa;
-    --enitt-palette-neutral-100: #eaeef3;
-    --enitt-palette-neutral-200: #d8dee7;
-    --enitt-palette-neutral-300: #b9c2ce;
-    --enitt-palette-neutral-400: #a6b0bd;
-    --enitt-palette-neutral-450: #9aa4b2;
-    --enitt-palette-neutral-500: #8d98a8;
-    --enitt-palette-neutral-550: #828d9d;
-    --enitt-palette-neutral-600: #6b7787;
-    --enitt-palette-neutral-700: #515c6b;
-    --enitt-palette-neutral-750: #3b4552;
-    --enitt-palette-neutral-800: #2a323d;
-    --enitt-palette-neutral-850: #22282f;
-    --enitt-palette-neutral-870: #1c2128;
-    --enitt-palette-neutral-900: #161b22;
-    --enitt-palette-neutral-950: #0d1117;
-    --enitt-palette-neutral-1000: #05080d;
-    --enitt-palette-blue-50: #eef5fd;
-    --enitt-palette-blue-100: #cde2fb;
-    --enitt-palette-blue-200: #9ec5f4;
-    --enitt-palette-blue-300: #6da7ec;
-    --enitt-palette-blue-400: #3987e5;
-    --enitt-palette-blue-450: #2a78d6;
-    --enitt-palette-blue-500: #256abf;
-    --enitt-palette-blue-600: #1c5cab;
-    --enitt-palette-blue-700: #184f95;
-    --enitt-palette-blue-800: #104281;
-    --enitt-palette-blue-900: #0d366b;
-    --enitt-palette-green-400: #2fd44f;
-    --enitt-palette-green-500: #0ca30c;
-    --enitt-palette-green-600: #0a7a0a;
-    --enitt-palette-green-700: #006300;
-    --enitt-palette-amber-400: #fab219;
-    --enitt-palette-amber-600: #8a5a00;
-    --enitt-palette-orange-400: #f0a07a;
-    --enitt-palette-orange-450: #ec835a;
-    --enitt-palette-orange-500: #eb6834;
-    --enitt-palette-orange-550: #d95926;
-    --enitt-palette-orange-700: #a34a22;
-    --enitt-palette-red-300: #f08585;
-    --enitt-palette-red-400: #e66767;
-    --enitt-palette-red-450: #e34948;
-    --enitt-palette-red-500: #d03b3b;
-    --enitt-palette-red-600: #c02626;
-    --enitt-palette-violet-300: #9085e9;
-    --enitt-palette-violet-600: #4a3aa7;
-    --enitt-palette-aqua-400: #1baf7a;
-    --enitt-palette-aqua-500: #199e70;
-    --enitt-palette-magenta-400: #e87ba4;
-    --enitt-palette-magenta-500: #d55181;
-    --enitt-palette-yellow-400: #eda100;
-    --enitt-palette-yellow-500: #c98500;
 
-    /* ── 치수 · 타이포그래피 · 모션 (테마 무관) ──────────────────────── */
-    --enitt-space-0: 0;
-    --enitt-space-1: 0.25rem;
-    --enitt-space-2: 0.5rem;
-    --enitt-space-3: 0.75rem;
-    --enitt-space-4: 1rem;
-    --enitt-space-5: 1.25rem;
-    --enitt-space-6: 1.5rem;
-    --enitt-space-8: 2rem;
-    --enitt-space-10: 2.5rem;
-    --enitt-space-12: 3rem;
-    --enitt-space-16: 4rem;
-    --enitt-space-20: 5rem;
-    --enitt-space-24: 6rem;
-    --enitt-space-px: 1px;
-    --enitt-space-0_5: 0.125rem;
-    --enitt-space-1_5: 0.375rem;
-    --enitt-space-2_5: 0.625rem;
-    --enitt-radius-none: 0;
-    --enitt-radius-xs: 2px;
-    --enitt-radius-sm: 4px;
-    --enitt-radius-md: 6px;
-    --enitt-radius-lg: 8px;
-    --enitt-radius-xl: 12px;
-    --enitt-radius-2xl: 16px;
-    --enitt-radius-full: 9999px;
-    --enitt-border-width-none: 0;
-    --enitt-border-width-thin: 1px;
-    --enitt-border-width-thick: 2px;
-    --enitt-border-width-heavy: 3px;
-    --enitt-font-family-sans:
-      'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI',
-      'Apple SD Gothic Neo', 'Noto Sans KR', Roboto, 'Malgun Gothic', sans-serif;
-    --enitt-font-family-mono:
-      'JetBrains Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
-    --enitt-font-family-numeric:
-      'Pretendard Variable', Pretendard, -apple-system, 'Segoe UI', sans-serif;
-    --enitt-font-size-2xs: 0.6875rem;
-    --enitt-font-size-xs: 0.75rem;
-    --enitt-font-size-sm: 0.8125rem;
-    --enitt-font-size-md: 0.875rem;
-    --enitt-font-size-lg: 1rem;
-    --enitt-font-size-xl: 1.125rem;
-    --enitt-font-size-2xl: 1.375rem;
-    --enitt-font-size-3xl: 1.75rem;
-    --enitt-font-size-4xl: 2.25rem;
-    --enitt-font-size-5xl: 3rem;
-    --enitt-font-weight-regular: 400;
-    --enitt-font-weight-medium: 500;
-    --enitt-font-weight-semibold: 600;
-    --enitt-font-weight-bold: 700;
-    --enitt-line-height-tight: 1.2;
-    --enitt-line-height-snug: 1.35;
-    --enitt-line-height-normal: 1_5;
-    --enitt-line-height-relaxed: 1.7;
-    --enitt-letter-spacing-tight: -0.01em;
-    --enitt-letter-spacing-normal: 0;
-    --enitt-letter-spacing-wide: 0.02em;
-    --enitt-letter-spacing-wider: 0.06em;
-    --enitt-duration-instant: 0ms;
-    --enitt-duration-fast: 120ms;
-    --enitt-duration-normal: 200ms;
-    --enitt-duration-slow: 320ms;
-    --enitt-duration-pulse: 1600ms;
-    --enitt-easing-standard: cubic-bezier(0.2, 0, 0, 1);
-    --enitt-easing-enter: cubic-bezier(0, 0, 0, 1);
-    --enitt-easing-exit: cubic-bezier(0.3, 0, 1, 1);
-    --enitt-z-index-base: 0;
-    --enitt-z-index-raised: 10;
-    --enitt-z-index-sticky: 100;
-    --enitt-z-index-overlay: 500;
-    --enitt-z-index-modal: 1000;
-    --enitt-z-index-toast: 1500;
-    --enitt-z-index-tooltip: 2000;
-    --enitt-size-control-sm: 1.75rem;
-    --enitt-size-control-md: 2.125rem;
-    --enitt-size-control-lg: 2.5rem;
-    --enitt-size-icon-sm: 0.875rem;
-    --enitt-size-icon-md: 1rem;
-    --enitt-size-icon-lg: 1.25rem;
-  }
+:root {
+  /* ── 팔레트 (원시 색상 — 컴포넌트에서 직접 쓰지 말 것) ────────────── */
+  --enitt-palette-neutral-0: #ffffff;
+  --enitt-palette-neutral-25: #fafbfc;
+  --enitt-palette-neutral-50: #f5f7fa;
+  --enitt-palette-neutral-100: #eaeef3;
+  --enitt-palette-neutral-200: #d8dee7;
+  --enitt-palette-neutral-300: #b9c2ce;
+  --enitt-palette-neutral-400: #a6b0bd;
+  --enitt-palette-neutral-450: #9aa4b2;
+  --enitt-palette-neutral-500: #8d98a8;
+  --enitt-palette-neutral-550: #828d9d;
+  --enitt-palette-neutral-600: #6b7787;
+  --enitt-palette-neutral-700: #515c6b;
+  --enitt-palette-neutral-750: #3b4552;
+  --enitt-palette-neutral-800: #2a323d;
+  --enitt-palette-neutral-850: #22282f;
+  --enitt-palette-neutral-870: #1c2128;
+  --enitt-palette-neutral-900: #161b22;
+  --enitt-palette-neutral-950: #0d1117;
+  --enitt-palette-neutral-1000: #05080d;
+  --enitt-palette-blue-50: #eef5fd;
+  --enitt-palette-blue-100: #cde2fb;
+  --enitt-palette-blue-200: #9ec5f4;
+  --enitt-palette-blue-300: #6da7ec;
+  --enitt-palette-blue-400: #3987e5;
+  --enitt-palette-blue-450: #2a78d6;
+  --enitt-palette-blue-500: #256abf;
+  --enitt-palette-blue-600: #1c5cab;
+  --enitt-palette-blue-700: #184f95;
+  --enitt-palette-blue-800: #104281;
+  --enitt-palette-blue-900: #0d366b;
+  --enitt-palette-green-400: #2fd44f;
+  --enitt-palette-green-500: #0ca30c;
+  --enitt-palette-green-600: #0a7a0a;
+  --enitt-palette-green-700: #006300;
+  --enitt-palette-amber-400: #fab219;
+  --enitt-palette-amber-600: #8a5a00;
+  --enitt-palette-orange-400: #f0a07a;
+  --enitt-palette-orange-450: #ec835a;
+  --enitt-palette-orange-500: #eb6834;
+  --enitt-palette-orange-550: #d95926;
+  --enitt-palette-orange-700: #a34a22;
+  --enitt-palette-red-300: #f08585;
+  --enitt-palette-red-400: #e66767;
+  --enitt-palette-red-450: #e34948;
+  --enitt-palette-red-500: #d03b3b;
+  --enitt-palette-red-600: #c02626;
+  --enitt-palette-violet-300: #9085e9;
+  --enitt-palette-violet-600: #4a3aa7;
+  --enitt-palette-aqua-400: #1baf7a;
+  --enitt-palette-aqua-500: #199e70;
+  --enitt-palette-magenta-400: #e87ba4;
+  --enitt-palette-magenta-500: #d55181;
+  --enitt-palette-yellow-400: #eda100;
+  --enitt-palette-yellow-500: #c98500;
 
-  /* ── 라이트 테마 (기본값) ─────────────────────────────────────────── */
-  :root,
-  :root[data-theme='light'] {
-    color-scheme: light;
-    --enitt-color-bg-canvas: #f5f7fa;
-    --enitt-color-bg-surface: #ffffff;
-    --enitt-color-bg-raised: #ffffff;
-    --enitt-color-bg-sunken: #f5f7fa;
-    --enitt-color-bg-muted: #eaeef3;
-    --enitt-color-bg-hover: rgba(13, 17, 23, 0.04);
-    --enitt-color-bg-active: rgba(13, 17, 23, 0.08);
-    --enitt-color-bg-selected: #eef5fd;
-    --enitt-color-bg-overlay: rgba(13, 17, 23, 0.45);
-    --enitt-color-bg-disabled: #eaeef3;
-    --enitt-color-fg-default: #1c2128;
-    --enitt-color-fg-muted: #515c6b;
-    --enitt-color-fg-subtle: #6b7787;
-    --enitt-color-fg-disabled: #8d98a8;
-    --enitt-color-fg-on-accent: #ffffff;
-    --enitt-color-fg-inverse: #ffffff;
-    --enitt-color-border-subtle: #eaeef3;
-    --enitt-color-border-default: #d8dee7;
-    --enitt-color-border-strong: #b9c2ce;
-    --enitt-color-border-focus: #2a78d6;
-    --enitt-color-accent-solid: #256abf;
-    --enitt-color-accent-solid-hover: #1c5cab;
-    --enitt-color-accent-solid-active: #184f95;
-    --enitt-color-accent-fg: #1c5cab;
-    --enitt-color-accent-border: #2a78d6;
-    --enitt-color-accent-bg: #eef5fd;
-    --enitt-color-status-normal: #0ca30c;
-    --enitt-color-status-info: #2a78d6;
-    --enitt-color-status-warning: #fab219;
-    --enitt-color-status-serious: #ec835a;
-    --enitt-color-status-critical: #d03b3b;
-    --enitt-color-status-unknown: #828d9d;
-    --enitt-color-status-fg-normal: #0a7a0a;
-    --enitt-color-status-fg-info: #1c5cab;
-    --enitt-color-status-fg-warning: #8a5a00;
-    --enitt-color-status-fg-serious: #a34a22;
-    --enitt-color-status-fg-critical: #c02626;
-    --enitt-color-status-fg-unknown: #515c6b;
-    --enitt-color-status-bg-normal: rgba(12, 163, 12, 0.1);
-    --enitt-color-status-bg-info: rgba(42, 120, 214, 0.1);
-    --enitt-color-status-bg-warning: rgba(250, 178, 25, 0.16);
-    --enitt-color-status-bg-serious: rgba(236, 131, 90, 0.14);
-    --enitt-color-status-bg-critical: rgba(208, 59, 59, 0.1);
-    --enitt-color-status-bg-unknown: rgba(107, 119, 135, 0.1);
-    --enitt-color-chart-series-1: #2a78d6;
-    --enitt-color-chart-series-2: #eb6834;
-    --enitt-color-chart-series-3: #1baf7a;
-    --enitt-color-chart-series-4: #eda100;
-    --enitt-color-chart-series-5: #e87ba4;
-    --enitt-color-chart-series-6: #006300;
-    --enitt-color-chart-series-7: #4a3aa7;
-    --enitt-color-chart-series-8: #e34948;
-    --enitt-color-chart-grid: #eaeef3;
-    --enitt-color-chart-axis: #b9c2ce;
-    --enitt-color-chart-threshold: #d03b3b;
-    --enitt-color-chart-surface: #ffffff;
-    --enitt-shadow-xs: 0 1px 2px rgba(13, 17, 23, 0.06);
-    --enitt-shadow-sm: 0 1px 3px rgba(13, 17, 23, 0.1), 0 1px 2px rgba(13, 17, 23, 0.06);
-    --enitt-shadow-md: 0 4px 12px rgba(13, 17, 23, 0.1);
-    --enitt-shadow-lg: 0 12px 28px rgba(13, 17, 23, 0.14);
-    --enitt-shadow-focus: 0 0 0 3px rgba(42, 120, 214, 0.35);
-  }
+  /* ── 치수 · 타이포그래피 · 모션 (테마 무관) ──────────────────────── */
+  --enitt-space-0: 0;
+  --enitt-space-1: 0.25rem;
+  --enitt-space-2: 0.5rem;
+  --enitt-space-3: 0.75rem;
+  --enitt-space-4: 1rem;
+  --enitt-space-5: 1.25rem;
+  --enitt-space-6: 1.5rem;
+  --enitt-space-8: 2rem;
+  --enitt-space-10: 2.5rem;
+  --enitt-space-12: 3rem;
+  --enitt-space-16: 4rem;
+  --enitt-space-20: 5rem;
+  --enitt-space-24: 6rem;
+  --enitt-space-px: 1px;
+  --enitt-space-0_5: 0.125rem;
+  --enitt-space-1_5: 0.375rem;
+  --enitt-space-2_5: 0.625rem;
+  --enitt-radius-none: 0;
+  --enitt-radius-xs: 2px;
+  --enitt-radius-sm: 4px;
+  --enitt-radius-md: 6px;
+  --enitt-radius-lg: 8px;
+  --enitt-radius-xl: 12px;
+  --enitt-radius-2xl: 16px;
+  --enitt-radius-full: 9999px;
+  --enitt-border-width-none: 0;
+  --enitt-border-width-thin: 1px;
+  --enitt-border-width-thick: 2px;
+  --enitt-border-width-heavy: 3px;
+  --enitt-font-family-sans: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', Roboto, 'Malgun Gothic', sans-serif;
+  --enitt-font-family-mono: 'JetBrains Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  --enitt-font-family-numeric: 'Pretendard Variable', Pretendard, -apple-system, 'Segoe UI', sans-serif;
+  --enitt-font-size-2xs: 0.6875rem;
+  --enitt-font-size-xs: 0.75rem;
+  --enitt-font-size-sm: 0.8125rem;
+  --enitt-font-size-md: 0.875rem;
+  --enitt-font-size-lg: 1rem;
+  --enitt-font-size-xl: 1.125rem;
+  --enitt-font-size-2xl: 1.375rem;
+  --enitt-font-size-3xl: 1.75rem;
+  --enitt-font-size-4xl: 2.25rem;
+  --enitt-font-size-5xl: 3rem;
+  --enitt-font-weight-regular: 400;
+  --enitt-font-weight-medium: 500;
+  --enitt-font-weight-semibold: 600;
+  --enitt-font-weight-bold: 700;
+  --enitt-line-height-tight: 1.2;
+  --enitt-line-height-snug: 1.35;
+  --enitt-line-height-normal: 1_5;
+  --enitt-line-height-relaxed: 1.7;
+  --enitt-letter-spacing-tight: -0.01em;
+  --enitt-letter-spacing-normal: 0;
+  --enitt-letter-spacing-wide: 0.02em;
+  --enitt-letter-spacing-wider: 0.06em;
+  --enitt-duration-instant: 0ms;
+  --enitt-duration-fast: 120ms;
+  --enitt-duration-normal: 200ms;
+  --enitt-duration-slow: 320ms;
+  --enitt-duration-pulse: 1600ms;
+  --enitt-easing-standard: cubic-bezier(0.2, 0, 0, 1);
+  --enitt-easing-enter: cubic-bezier(0, 0, 0, 1);
+  --enitt-easing-exit: cubic-bezier(0.3, 0, 1, 1);
+  --enitt-z-index-base: 0;
+  --enitt-z-index-raised: 10;
+  --enitt-z-index-sticky: 100;
+  --enitt-z-index-overlay: 500;
+  --enitt-z-index-modal: 1000;
+  --enitt-z-index-toast: 1500;
+  --enitt-z-index-tooltip: 2000;
+  --enitt-size-control-sm: 1.75rem;
+  --enitt-size-control-md: 2.125rem;
+  --enitt-size-control-lg: 2.5rem;
+  --enitt-size-icon-sm: 0.875rem;
+  --enitt-size-icon-md: 1rem;
+  --enitt-size-icon-lg: 1.25rem;
+}
 
-  /* ── 다크 테마 — 사용자가 명시적으로 고른 경우 ────────────────────── */
-  :root[data-theme='dark'] {
+/* ── 라이트 테마 (기본값) ─────────────────────────────────────────── */
+:root,
+:root[data-theme='light'] {
+  color-scheme: light;
+  --enitt-color-bg-canvas: #f5f7fa;
+  --enitt-color-bg-surface: #ffffff;
+  --enitt-color-bg-raised: #ffffff;
+  --enitt-color-bg-sunken: #f5f7fa;
+  --enitt-color-bg-muted: #eaeef3;
+  --enitt-color-bg-hover: rgba(13, 17, 23, 0.04);
+  --enitt-color-bg-active: rgba(13, 17, 23, 0.08);
+  --enitt-color-bg-selected: #eef5fd;
+  --enitt-color-bg-overlay: rgba(13, 17, 23, 0.45);
+  --enitt-color-bg-disabled: #eaeef3;
+  --enitt-color-fg-default: #1c2128;
+  --enitt-color-fg-muted: #515c6b;
+  --enitt-color-fg-subtle: #6b7787;
+  --enitt-color-fg-disabled: #8d98a8;
+  --enitt-color-fg-on-accent: #ffffff;
+  --enitt-color-fg-inverse: #ffffff;
+  --enitt-color-border-subtle: #eaeef3;
+  --enitt-color-border-default: #d8dee7;
+  --enitt-color-border-strong: #b9c2ce;
+  --enitt-color-border-focus: #2a78d6;
+  --enitt-color-accent-solid: #256abf;
+  --enitt-color-accent-solid-hover: #1c5cab;
+  --enitt-color-accent-solid-active: #184f95;
+  --enitt-color-accent-fg: #1c5cab;
+  --enitt-color-accent-border: #2a78d6;
+  --enitt-color-accent-bg: #eef5fd;
+  --enitt-color-status-normal: #0ca30c;
+  --enitt-color-status-info: #2a78d6;
+  --enitt-color-status-warning: #fab219;
+  --enitt-color-status-serious: #ec835a;
+  --enitt-color-status-critical: #d03b3b;
+  --enitt-color-status-unknown: #828d9d;
+  --enitt-color-status-fg-normal: #0a7a0a;
+  --enitt-color-status-fg-info: #1c5cab;
+  --enitt-color-status-fg-warning: #8a5a00;
+  --enitt-color-status-fg-serious: #a34a22;
+  --enitt-color-status-fg-critical: #c02626;
+  --enitt-color-status-fg-unknown: #515c6b;
+  --enitt-color-status-bg-normal: rgba(12, 163, 12, 0.10);
+  --enitt-color-status-bg-info: rgba(42, 120, 214, 0.10);
+  --enitt-color-status-bg-warning: rgba(250, 178, 25, 0.16);
+  --enitt-color-status-bg-serious: rgba(236, 131, 90, 0.14);
+  --enitt-color-status-bg-critical: rgba(208, 59, 59, 0.10);
+  --enitt-color-status-bg-unknown: rgba(107, 119, 135, 0.10);
+  --enitt-color-chart-series-1: #2a78d6;
+  --enitt-color-chart-series-2: #eb6834;
+  --enitt-color-chart-series-3: #1baf7a;
+  --enitt-color-chart-series-4: #eda100;
+  --enitt-color-chart-series-5: #e87ba4;
+  --enitt-color-chart-series-6: #006300;
+  --enitt-color-chart-series-7: #4a3aa7;
+  --enitt-color-chart-series-8: #e34948;
+  --enitt-color-chart-grid: #eaeef3;
+  --enitt-color-chart-axis: #b9c2ce;
+  --enitt-color-chart-threshold: #d03b3b;
+  --enitt-color-chart-surface: #ffffff;
+  --enitt-shadow-xs: 0 1px 2px rgba(13, 17, 23, 0.06);
+  --enitt-shadow-sm: 0 1px 3px rgba(13, 17, 23, 0.10), 0 1px 2px rgba(13, 17, 23, 0.06);
+  --enitt-shadow-md: 0 4px 12px rgba(13, 17, 23, 0.10);
+  --enitt-shadow-lg: 0 12px 28px rgba(13, 17, 23, 0.14);
+  --enitt-shadow-focus: 0 0 0 3px rgba(42, 120, 214, 0.35);
+}
+
+/* ── 다크 테마 — 사용자가 명시적으로 고른 경우 ────────────────────── */
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --enitt-color-bg-canvas: #0d1117;
+  --enitt-color-bg-surface: #161b22;
+  --enitt-color-bg-raised: #1c2128;
+  --enitt-color-bg-sunken: #05080d;
+  --enitt-color-bg-muted: #22282f;
+  --enitt-color-bg-hover: rgba(255, 255, 255, 0.06);
+  --enitt-color-bg-active: rgba(255, 255, 255, 0.10);
+  --enitt-color-bg-selected: rgba(57, 135, 229, 0.16);
+  --enitt-color-bg-overlay: rgba(5, 8, 13, 0.65);
+  --enitt-color-bg-disabled: #22282f;
+  --enitt-color-fg-default: #eaeef3;
+  --enitt-color-fg-muted: #b9c2ce;
+  --enitt-color-fg-subtle: #8d98a8;
+  --enitt-color-fg-disabled: #6b7787;
+  --enitt-color-fg-on-accent: #ffffff;
+  --enitt-color-fg-inverse: #161b22;
+  --enitt-color-border-subtle: #22282f;
+  --enitt-color-border-default: #2a323d;
+  --enitt-color-border-strong: #3b4552;
+  --enitt-color-border-focus: #3987e5;
+  --enitt-color-accent-solid: #256abf;
+  --enitt-color-accent-solid-hover: #3987e5;
+  --enitt-color-accent-solid-active: #1c5cab;
+  --enitt-color-accent-fg: #6da7ec;
+  --enitt-color-accent-border: #3987e5;
+  --enitt-color-accent-bg: rgba(57, 135, 229, 0.14);
+  --enitt-color-status-normal: #0ca30c;
+  --enitt-color-status-info: #3987e5;
+  --enitt-color-status-warning: #fab219;
+  --enitt-color-status-serious: #ec835a;
+  --enitt-color-status-critical: #d03b3b;
+  --enitt-color-status-unknown: #8d98a8;
+  --enitt-color-status-fg-normal: #2fd44f;
+  --enitt-color-status-fg-info: #6da7ec;
+  --enitt-color-status-fg-warning: #fab219;
+  --enitt-color-status-fg-serious: #f0a07a;
+  --enitt-color-status-fg-critical: #f08585;
+  --enitt-color-status-fg-unknown: #a6b0bd;
+  --enitt-color-status-bg-normal: rgba(12, 163, 12, 0.18);
+  --enitt-color-status-bg-info: rgba(57, 135, 229, 0.18);
+  --enitt-color-status-bg-warning: rgba(250, 178, 25, 0.18);
+  --enitt-color-status-bg-serious: rgba(236, 131, 90, 0.20);
+  --enitt-color-status-bg-critical: rgba(208, 59, 59, 0.22);
+  --enitt-color-status-bg-unknown: rgba(141, 152, 168, 0.16);
+  --enitt-color-chart-series-1: #3987e5;
+  --enitt-color-chart-series-2: #d95926;
+  --enitt-color-chart-series-3: #199e70;
+  --enitt-color-chart-series-4: #c98500;
+  --enitt-color-chart-series-5: #d55181;
+  --enitt-color-chart-series-6: #006300;
+  --enitt-color-chart-series-7: #9085e9;
+  --enitt-color-chart-series-8: #e66767;
+  --enitt-color-chart-grid: #22282f;
+  --enitt-color-chart-axis: #3b4552;
+  --enitt-color-chart-threshold: #e66767;
+  --enitt-color-chart-surface: #161b22;
+  --enitt-shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.40);
+  --enitt-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.50);
+  --enitt-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.55);
+  --enitt-shadow-lg: 0 12px 28px rgba(0, 0, 0, 0.65);
+  --enitt-shadow-focus: 0 0 0 3px rgba(57, 135, 229, 0.45);
+}
+
+/* ── 다크 테마 — OS 설정을 따르는 경우 ────────────────────────────── */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
     color-scheme: dark;
     --enitt-color-bg-canvas: #0d1117;
     --enitt-color-bg-surface: #161b22;
@@ -233,7 +297,7 @@
     --enitt-color-bg-sunken: #05080d;
     --enitt-color-bg-muted: #22282f;
     --enitt-color-bg-hover: rgba(255, 255, 255, 0.06);
-    --enitt-color-bg-active: rgba(255, 255, 255, 0.1);
+    --enitt-color-bg-active: rgba(255, 255, 255, 0.10);
     --enitt-color-bg-selected: rgba(57, 135, 229, 0.16);
     --enitt-color-bg-overlay: rgba(5, 8, 13, 0.65);
     --enitt-color-bg-disabled: #22282f;
@@ -268,7 +332,7 @@
     --enitt-color-status-bg-normal: rgba(12, 163, 12, 0.18);
     --enitt-color-status-bg-info: rgba(57, 135, 229, 0.18);
     --enitt-color-status-bg-warning: rgba(250, 178, 25, 0.18);
-    --enitt-color-status-bg-serious: rgba(236, 131, 90, 0.2);
+    --enitt-color-status-bg-serious: rgba(236, 131, 90, 0.20);
     --enitt-color-status-bg-critical: rgba(208, 59, 59, 0.22);
     --enitt-color-status-bg-unknown: rgba(141, 152, 168, 0.16);
     --enitt-color-chart-series-1: #3987e5;
@@ -283,88 +347,24 @@
     --enitt-color-chart-axis: #3b4552;
     --enitt-color-chart-threshold: #e66767;
     --enitt-color-chart-surface: #161b22;
-    --enitt-shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.4);
-    --enitt-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.5);
+    --enitt-shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.40);
+    --enitt-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.50);
     --enitt-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.55);
     --enitt-shadow-lg: 0 12px 28px rgba(0, 0, 0, 0.65);
     --enitt-shadow-focus: 0 0 0 3px rgba(57, 135, 229, 0.45);
   }
+}
 
-  /* ── 다크 테마 — OS 설정을 따르는 경우 ────────────────────────────── */
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme='light']) {
-      color-scheme: dark;
-      --enitt-color-bg-canvas: #0d1117;
-      --enitt-color-bg-surface: #161b22;
-      --enitt-color-bg-raised: #1c2128;
-      --enitt-color-bg-sunken: #05080d;
-      --enitt-color-bg-muted: #22282f;
-      --enitt-color-bg-hover: rgba(255, 255, 255, 0.06);
-      --enitt-color-bg-active: rgba(255, 255, 255, 0.1);
-      --enitt-color-bg-selected: rgba(57, 135, 229, 0.16);
-      --enitt-color-bg-overlay: rgba(5, 8, 13, 0.65);
-      --enitt-color-bg-disabled: #22282f;
-      --enitt-color-fg-default: #eaeef3;
-      --enitt-color-fg-muted: #b9c2ce;
-      --enitt-color-fg-subtle: #8d98a8;
-      --enitt-color-fg-disabled: #6b7787;
-      --enitt-color-fg-on-accent: #ffffff;
-      --enitt-color-fg-inverse: #161b22;
-      --enitt-color-border-subtle: #22282f;
-      --enitt-color-border-default: #2a323d;
-      --enitt-color-border-strong: #3b4552;
-      --enitt-color-border-focus: #3987e5;
-      --enitt-color-accent-solid: #256abf;
-      --enitt-color-accent-solid-hover: #3987e5;
-      --enitt-color-accent-solid-active: #1c5cab;
-      --enitt-color-accent-fg: #6da7ec;
-      --enitt-color-accent-border: #3987e5;
-      --enitt-color-accent-bg: rgba(57, 135, 229, 0.14);
-      --enitt-color-status-normal: #0ca30c;
-      --enitt-color-status-info: #3987e5;
-      --enitt-color-status-warning: #fab219;
-      --enitt-color-status-serious: #ec835a;
-      --enitt-color-status-critical: #d03b3b;
-      --enitt-color-status-unknown: #8d98a8;
-      --enitt-color-status-fg-normal: #2fd44f;
-      --enitt-color-status-fg-info: #6da7ec;
-      --enitt-color-status-fg-warning: #fab219;
-      --enitt-color-status-fg-serious: #f0a07a;
-      --enitt-color-status-fg-critical: #f08585;
-      --enitt-color-status-fg-unknown: #a6b0bd;
-      --enitt-color-status-bg-normal: rgba(12, 163, 12, 0.18);
-      --enitt-color-status-bg-info: rgba(57, 135, 229, 0.18);
-      --enitt-color-status-bg-warning: rgba(250, 178, 25, 0.18);
-      --enitt-color-status-bg-serious: rgba(236, 131, 90, 0.2);
-      --enitt-color-status-bg-critical: rgba(208, 59, 59, 0.22);
-      --enitt-color-status-bg-unknown: rgba(141, 152, 168, 0.16);
-      --enitt-color-chart-series-1: #3987e5;
-      --enitt-color-chart-series-2: #d95926;
-      --enitt-color-chart-series-3: #199e70;
-      --enitt-color-chart-series-4: #c98500;
-      --enitt-color-chart-series-5: #d55181;
-      --enitt-color-chart-series-6: #006300;
-      --enitt-color-chart-series-7: #9085e9;
-      --enitt-color-chart-series-8: #e66767;
-      --enitt-color-chart-grid: #22282f;
-      --enitt-color-chart-axis: #3b4552;
-      --enitt-color-chart-threshold: #e66767;
-      --enitt-color-chart-surface: #161b22;
-      --enitt-shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.4);
-      --enitt-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.5);
-      --enitt-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.55);
-      --enitt-shadow-lg: 0 12px 28px rgba(0, 0, 0, 0.65);
-      --enitt-shadow-focus: 0 0 0 3px rgba(57, 135, 229, 0.45);
-    }
-  }
 
-  /* ── 모션 민감 사용자 존중 ────────────────────────────────────────── */
-  @media (prefers-reduced-motion: reduce) {
-    :root {
-      --enitt-duration-fast: 0ms;
-      --enitt-duration-normal: 0ms;
-      --enitt-duration-slow: 0ms;
-      --enitt-duration-pulse: 0ms;
-    }
+
+/* ── 모션 민감 사용자 존중 ────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --enitt-duration-fast: 0ms;
+    --enitt-duration-normal: 0ms;
+    --enitt-duration-slow: 0ms;
+    --enitt-duration-pulse: 0ms;
   }
+}
+
 }
