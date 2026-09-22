@@ -1,0 +1,73 @@
+@layer enitt.components {
+  .enitt-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--enitt-space-2) var(--enitt-space-4);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: var(--enitt-font-size-xs);
+  }
+
+  .enitt-legend--vertical {
+    flex-direction: column;
+    gap: var(--enitt-space-1_5);
+  }
+
+  .enitt-legend__item {
+    display: flex;
+    align-items: center;
+    gap: var(--enitt-space-1_5);
+    min-inline-size: 0;
+  }
+
+  .enitt-legend__button {
+    display: flex;
+    align-items: center;
+    gap: var(--enitt-space-1_5);
+    padding: 0;
+    border: 0;
+    background: none;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+    border-radius: var(--enitt-radius-sm);
+  }
+
+  .enitt-legend__item--hidden {
+    opacity: 0.45;
+  }
+  .enitt-legend__item--hidden .enitt-legend__label {
+    text-decoration: line-through;
+  }
+
+  .enitt-legend__swatch {
+    flex: none;
+    inline-size: 0.75rem;
+    block-size: 0.1875rem;
+    border-radius: var(--enitt-radius-full);
+    background-color: var(--legend-color, var(--enitt-color-fg-subtle));
+  }
+
+  /* 점선 시리즈는 범례에서도 점선으로 — 색 외의 두 번째 구분 채널 */
+  .enitt-legend__swatch--dashed {
+    background-image: linear-gradient(
+      to right,
+      var(--legend-color) 0 40%,
+      transparent 40% 60%,
+      var(--legend-color) 60% 100%
+    );
+    background-color: transparent;
+  }
+
+  /* 라벨·값은 항상 텍스트 색 — 시리즈 색을 글자에 입히지 않는다 */
+  .enitt-legend__label {
+    color: var(--enitt-color-fg-muted);
+    white-space: nowrap;
+  }
+
+  .enitt-legend__value {
+    color: var(--enitt-color-fg-default);
+    font-weight: var(--enitt-font-weight-medium);
+  }
+}

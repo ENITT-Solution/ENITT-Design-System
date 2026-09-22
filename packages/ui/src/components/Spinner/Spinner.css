@@ -1,0 +1,65 @@
+@layer enitt.components {
+  .enitt-spinner {
+    display: inline-flex;
+    color: var(--enitt-color-fg-subtle);
+  }
+
+  .enitt-spinner svg {
+    inline-size: 1em;
+    block-size: 1em;
+    fill: none;
+    stroke-width: 2.5;
+    animation: enitt-spin 900ms linear infinite;
+  }
+
+  .enitt-spinner--sm {
+    font-size: var(--enitt-size-icon-sm);
+  }
+  .enitt-spinner--md {
+    font-size: var(--enitt-size-icon-lg);
+  }
+  .enitt-spinner--lg {
+    font-size: var(--enitt-space-8);
+  }
+
+  .enitt-spinner__track {
+    stroke: currentColor;
+    opacity: 0.2;
+  }
+
+  .enitt-spinner__head {
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-dasharray: 14 43;
+  }
+
+  @keyframes enitt-spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* 회전이 불편한 사용자에게는 명도 점멸로 대체한다 */
+  @media (prefers-reduced-motion: reduce) {
+    .enitt-spinner svg {
+      animation: enitt-spinner-pulse 1400ms ease-in-out infinite;
+    }
+    .enitt-spinner__head {
+      stroke-dasharray: none;
+    }
+  }
+
+  @keyframes enitt-spinner-pulse {
+    0%,
+    100% {
+      opacity: 0.35;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  .enitt-spinner svg {
+    transform-origin: center;
+  }
+}

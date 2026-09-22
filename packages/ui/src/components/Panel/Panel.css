@@ -1,0 +1,78 @@
+@layer enitt.components {
+  .enitt-panel {
+    display: flex;
+    flex-direction: column;
+    min-inline-size: 0;
+    background-color: var(--enitt-color-bg-surface);
+    border: var(--enitt-border-width-thin) solid var(--enitt-color-border-default);
+    border-radius: var(--enitt-radius-lg);
+    box-shadow: var(--enitt-shadow-xs);
+    overflow: hidden;
+  }
+
+  .enitt-panel__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--enitt-space-4);
+    padding: var(--enitt-space-3) var(--enitt-space-4);
+  }
+
+  .enitt-panel--divided .enitt-panel__header {
+    border-block-end: var(--enitt-border-width-thin) solid var(--enitt-color-border-subtle);
+  }
+
+  .enitt-panel__titles {
+    min-inline-size: 0;
+  }
+
+  .enitt-panel__title {
+    margin: 0;
+    font-size: var(--enitt-font-size-md);
+    font-weight: var(--enitt-font-weight-semibold);
+    color: var(--enitt-color-fg-default);
+    line-height: var(--enitt-line-height-snug);
+  }
+
+  .enitt-panel__subtitle {
+    margin: var(--enitt-space-0_5) 0 0;
+    font-size: var(--enitt-font-size-xs);
+    color: var(--enitt-color-fg-subtle);
+  }
+
+  .enitt-panel__actions {
+    display: flex;
+    align-items: center;
+    gap: var(--enitt-space-2);
+    flex: none;
+  }
+
+  .enitt-panel__body {
+    position: relative;
+    flex: 1;
+    min-block-size: 0;
+    padding: var(--enitt-space-4);
+  }
+
+  .enitt-panel__body--flush {
+    padding: 0;
+  }
+
+  /* 갱신 중에도 이전 값이 보이도록 반투명하게 덮는다 */
+  .enitt-panel__loading {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    background-color: color-mix(in oklab, var(--enitt-color-bg-surface) 70%, transparent);
+    backdrop-filter: blur(1px);
+  }
+
+  .enitt-panel__footer {
+    padding: var(--enitt-space-2_5) var(--enitt-space-4);
+    border-block-start: var(--enitt-border-width-thin) solid var(--enitt-color-border-subtle);
+    background-color: var(--enitt-color-bg-sunken);
+    font-size: var(--enitt-font-size-xs);
+    color: var(--enitt-color-fg-subtle);
+  }
+}

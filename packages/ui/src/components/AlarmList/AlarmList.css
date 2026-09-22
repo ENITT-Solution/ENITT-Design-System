@@ -1,0 +1,152 @@
+@layer enitt.components {
+  .enitt-alarms {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .enitt-alarms__item {
+    --alarm-color: var(--enitt-color-status-unknown);
+
+    display: flex;
+    align-items: stretch;
+    border-block-end: var(--enitt-border-width-thin) solid var(--enitt-color-border-subtle);
+    /* 등급은 왼쪽 띠로 — 행 전체를 물들이지 않는다 */
+    box-shadow: inset 3px 0 0 0 var(--alarm-color);
+  }
+
+  .enitt-alarms__item:last-child {
+    border-block-end: 0;
+  }
+
+  .enitt-alarms__item--normal {
+    --alarm-color: var(--enitt-color-status-normal);
+  }
+  .enitt-alarms__item--info {
+    --alarm-color: var(--enitt-color-status-info);
+  }
+  .enitt-alarms__item--warning {
+    --alarm-color: var(--enitt-color-status-warning);
+  }
+  .enitt-alarms__item--serious {
+    --alarm-color: var(--enitt-color-status-serious);
+  }
+  .enitt-alarms__item--critical {
+    --alarm-color: var(--enitt-color-status-critical);
+  }
+  .enitt-alarms__item--unknown {
+    --alarm-color: var(--enitt-color-status-unknown);
+  }
+
+  .enitt-alarms__item--selected {
+    background-color: var(--enitt-color-bg-selected);
+  }
+
+  /* 해소된 경보는 흐리게 — 색이 아니라 명도로 구분된다 */
+  .enitt-alarms__item--cleared {
+    opacity: 0.55;
+  }
+
+  .enitt-alarms__main {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--enitt-space-2_5);
+    flex: 1;
+    min-inline-size: 0;
+    padding: var(--enitt-space-2_5) var(--enitt-space-3);
+    border: 0;
+    background: none;
+    font: inherit;
+    color: inherit;
+    text-align: start;
+    cursor: pointer;
+  }
+
+  .enitt-alarms__main:disabled {
+    cursor: default;
+  }
+
+  .enitt-alarms__main:not(:disabled):hover {
+    background-color: var(--enitt-color-bg-hover);
+  }
+
+  .enitt-alarms--compact .enitt-alarms__main {
+    padding: var(--enitt-space-2) var(--enitt-space-2_5);
+  }
+
+  .enitt-alarms__icon {
+    flex: none;
+    margin-block-start: 1px;
+    font-size: var(--enitt-size-icon-lg);
+    color: var(--alarm-color);
+  }
+  .enitt-alarms__icon svg {
+    inline-size: 1em;
+    block-size: 1em;
+  }
+
+  .enitt-alarms__body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--enitt-space-0_5);
+    flex: 1;
+    min-inline-size: 0;
+  }
+
+  .enitt-alarms__headline {
+    display: flex;
+    align-items: baseline;
+    gap: var(--enitt-space-2);
+    font-size: var(--enitt-font-size-xs);
+  }
+
+  /* 등급 이름은 텍스트 색을 유지한다 — 배지가 아니라 라벨이다 */
+  .enitt-alarms__severity {
+    font-weight: var(--enitt-font-weight-semibold);
+    color: var(--enitt-color-fg-muted);
+  }
+
+  .enitt-alarms__source {
+    color: var(--enitt-color-fg-subtle);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .enitt-alarms__message {
+    font-size: var(--enitt-font-size-sm);
+    color: var(--enitt-color-fg-default);
+    overflow-wrap: anywhere;
+  }
+
+  /* 미확인 고위험 경보만 굵게 — 색 외의 두 번째 채널 */
+  .enitt-alarms__item--urgent .enitt-alarms__message {
+    font-weight: var(--enitt-font-weight-semibold);
+  }
+
+  .enitt-alarms__meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: var(--enitt-space-0_5);
+    flex: none;
+    font-size: var(--enitt-font-size-2xs);
+    color: var(--enitt-color-fg-subtle);
+    white-space: nowrap;
+  }
+
+  .enitt-alarms__cleared,
+  .enitt-alarms__acked {
+    padding: 1px var(--enitt-space-1_5);
+    border-radius: var(--enitt-radius-full);
+    background-color: var(--enitt-color-bg-muted);
+    color: var(--enitt-color-fg-subtle);
+  }
+
+  .enitt-alarms__action {
+    display: flex;
+    align-items: center;
+    padding-inline-end: var(--enitt-space-2);
+    flex: none;
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "name": "@enitt/tokens",
+  "version": "0.1.0",
+  "description": "ENITT 디자인 시스템 디자인 토큰 — 색상·타이포그래피·간격·모션의 단일 소스",
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": [
+    "*.css"
+  ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./tokens.css": "./dist/tokens.css",
+    "./primitives.json": "./src/primitives.json",
+    "./semantic.json": "./src/semantic.json",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "generate": "node scripts/build-tokens.mjs",
+    "build": "pnpm run generate && tsc -p tsconfig.build.json",
+    "dev": "pnpm run build --watch",
+    "typecheck": "pnpm run generate && tsc --noEmit -p tsconfig.json",
+    "clean": "rm -rf dist .turbo *.tsbuildinfo"
+  },
+  "devDependencies": {
+    "typescript": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

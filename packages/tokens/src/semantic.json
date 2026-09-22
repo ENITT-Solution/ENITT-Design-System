@@ -1,0 +1,268 @@
+{
+  "$description": "의미 토큰 — 컴포넌트가 사용하는 유일한 계층. {color.blue.500} 형태로 원시 토큰을 참조한다.",
+  "color": {
+    "bg": {
+      "canvas": {
+        "light": "{color.neutral.50}",
+        "dark": "{color.neutral.950}"
+      },
+      "surface": {
+        "light": "{color.neutral.0}",
+        "dark": "{color.neutral.900}"
+      },
+      "raised": {
+        "light": "{color.neutral.0}",
+        "dark": "{color.neutral.870}"
+      },
+      "sunken": {
+        "light": "{color.neutral.50}",
+        "dark": "{color.neutral.1000}"
+      },
+      "muted": {
+        "light": "{color.neutral.100}",
+        "dark": "{color.neutral.850}"
+      },
+      "hover": {
+        "light": "rgba(13, 17, 23, 0.04)",
+        "dark": "rgba(255, 255, 255, 0.06)"
+      },
+      "active": {
+        "light": "rgba(13, 17, 23, 0.08)",
+        "dark": "rgba(255, 255, 255, 0.10)"
+      },
+      "selected": {
+        "light": "{color.blue.50}",
+        "dark": "rgba(57, 135, 229, 0.16)"
+      },
+      "overlay": {
+        "light": "rgba(13, 17, 23, 0.45)",
+        "dark": "rgba(5, 8, 13, 0.65)"
+      },
+      "disabled": {
+        "light": "{color.neutral.100}",
+        "dark": "{color.neutral.850}"
+      }
+    },
+    "fg": {
+      "default": {
+        "light": "{color.neutral.870}",
+        "dark": "{color.neutral.100}"
+      },
+      "muted": {
+        "light": "{color.neutral.700}",
+        "dark": "{color.neutral.300}"
+      },
+      "subtle": {
+        "light": "{color.neutral.600}",
+        "dark": "{color.neutral.500}"
+      },
+      "disabled": {
+        "light": "{color.neutral.500}",
+        "dark": "{color.neutral.600}"
+      },
+      "on-accent": {
+        "light": "{color.neutral.0}",
+        "dark": "{color.neutral.0}"
+      },
+      "inverse": {
+        "light": "{color.neutral.0}",
+        "dark": "{color.neutral.900}"
+      }
+    },
+    "border": {
+      "subtle": {
+        "light": "{color.neutral.100}",
+        "dark": "{color.neutral.850}"
+      },
+      "default": {
+        "light": "{color.neutral.200}",
+        "dark": "{color.neutral.800}"
+      },
+      "strong": {
+        "light": "{color.neutral.300}",
+        "dark": "{color.neutral.750}"
+      },
+      "focus": {
+        "light": "{color.blue.450}",
+        "dark": "{color.blue.400}"
+      }
+    },
+    "accent": {
+      "solid": {
+        "light": "{color.blue.500}",
+        "dark": "{color.blue.500}"
+      },
+      "solid-hover": {
+        "light": "{color.blue.600}",
+        "dark": "{color.blue.400}"
+      },
+      "solid-active": {
+        "light": "{color.blue.700}",
+        "dark": "{color.blue.600}"
+      },
+      "fg": {
+        "light": "{color.blue.600}",
+        "dark": "{color.blue.300}"
+      },
+      "border": {
+        "light": "{color.blue.450}",
+        "dark": "{color.blue.400}"
+      },
+      "bg": {
+        "light": "{color.blue.50}",
+        "dark": "rgba(57, 135, 229, 0.14)"
+      }
+    },
+    "status": {
+      "normal": {
+        "light": "{color.green.500}",
+        "dark": "{color.green.500}"
+      },
+      "info": {
+        "light": "{color.blue.450}",
+        "dark": "{color.blue.400}"
+      },
+      "warning": {
+        "light": "{color.amber.400}",
+        "dark": "{color.amber.400}"
+      },
+      "serious": {
+        "light": "{color.orange.450}",
+        "dark": "{color.orange.450}"
+      },
+      "critical": {
+        "light": "{color.red.500}",
+        "dark": "{color.red.500}"
+      },
+      "unknown": {
+        "light": "{color.neutral.550}",
+        "dark": "{color.neutral.500}"
+      }
+    },
+    "status-fg": {
+      "normal": {
+        "light": "{color.green.600}",
+        "dark": "{color.green.400}"
+      },
+      "info": {
+        "light": "{color.blue.600}",
+        "dark": "{color.blue.300}"
+      },
+      "warning": {
+        "light": "{color.amber.600}",
+        "dark": "{color.amber.400}"
+      },
+      "serious": {
+        "light": "{color.orange.700}",
+        "dark": "{color.orange.400}"
+      },
+      "critical": {
+        "light": "{color.red.600}",
+        "dark": "{color.red.300}"
+      },
+      "unknown": {
+        "light": "{color.neutral.700}",
+        "dark": "{color.neutral.400}"
+      }
+    },
+    "status-bg": {
+      "normal": {
+        "light": "rgba(12, 163, 12, 0.10)",
+        "dark": "rgba(12, 163, 12, 0.18)"
+      },
+      "info": {
+        "light": "rgba(42, 120, 214, 0.10)",
+        "dark": "rgba(57, 135, 229, 0.18)"
+      },
+      "warning": {
+        "light": "rgba(250, 178, 25, 0.16)",
+        "dark": "rgba(250, 178, 25, 0.18)"
+      },
+      "serious": {
+        "light": "rgba(236, 131, 90, 0.14)",
+        "dark": "rgba(236, 131, 90, 0.20)"
+      },
+      "critical": {
+        "light": "rgba(208, 59, 59, 0.10)",
+        "dark": "rgba(208, 59, 59, 0.22)"
+      },
+      "unknown": {
+        "light": "rgba(107, 119, 135, 0.10)",
+        "dark": "rgba(141, 152, 168, 0.16)"
+      }
+    },
+    "chart": {
+      "$description": "dataviz 검증 통과 — 라이트 #ffffff / 다크 #161b22 표면 기준, 인접쌍 CVD ΔE 9.1/8.4. 슬롯 순서를 바꾸거나 순환 배정하지 말 것.",
+      "series-1": {
+        "light": "{color.blue.450}",
+        "dark": "{color.blue.400}"
+      },
+      "series-2": {
+        "light": "{color.orange.500}",
+        "dark": "{color.orange.550}"
+      },
+      "series-3": {
+        "light": "{color.aqua.400}",
+        "dark": "{color.aqua.500}"
+      },
+      "series-4": {
+        "light": "{color.yellow.400}",
+        "dark": "{color.yellow.500}"
+      },
+      "series-5": {
+        "light": "{color.magenta.400}",
+        "dark": "{color.magenta.500}"
+      },
+      "series-6": {
+        "light": "{color.green.700}",
+        "dark": "{color.green.700}"
+      },
+      "series-7": {
+        "light": "{color.violet.600}",
+        "dark": "{color.violet.300}"
+      },
+      "series-8": {
+        "light": "{color.red.450}",
+        "dark": "{color.red.400}"
+      },
+      "grid": {
+        "light": "{color.neutral.100}",
+        "dark": "{color.neutral.850}"
+      },
+      "axis": {
+        "light": "{color.neutral.300}",
+        "dark": "{color.neutral.750}"
+      },
+      "threshold": {
+        "light": "{color.red.500}",
+        "dark": "{color.red.400}"
+      },
+      "surface": {
+        "light": "{color.neutral.0}",
+        "dark": "{color.neutral.900}"
+      }
+    }
+  },
+  "shadow": {
+    "xs": {
+      "light": "0 1px 2px rgba(13, 17, 23, 0.06)",
+      "dark": "0 1px 2px rgba(0, 0, 0, 0.40)"
+    },
+    "sm": {
+      "light": "0 1px 3px rgba(13, 17, 23, 0.10), 0 1px 2px rgba(13, 17, 23, 0.06)",
+      "dark": "0 1px 3px rgba(0, 0, 0, 0.50)"
+    },
+    "md": {
+      "light": "0 4px 12px rgba(13, 17, 23, 0.10)",
+      "dark": "0 4px 12px rgba(0, 0, 0, 0.55)"
+    },
+    "lg": {
+      "light": "0 12px 28px rgba(13, 17, 23, 0.14)",
+      "dark": "0 12px 28px rgba(0, 0, 0, 0.65)"
+    },
+    "focus": {
+      "light": "0 0 0 3px rgba(42, 120, 214, 0.35)",
+      "dark": "0 0 0 3px rgba(57, 135, 229, 0.45)"
+    }
+  }
+}

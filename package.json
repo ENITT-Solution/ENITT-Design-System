@@ -1,0 +1,29 @@
+{
+  "name": "enitt-design-system",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "ENITT 디자인 시스템 — 계통도(단선결선도)와 웹 모니터링 UI를 위한 컴포넌트 라이브러리",
+  "license": "MIT",
+  "packageManager": "pnpm@12.4.2",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "typecheck": "turbo run typecheck",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "storybook": "pnpm --filter @enitt/storybook dev",
+    "build:storybook": "turbo run build --filter @enitt/storybook...",
+    "format": "prettier --write \"**/*.{ts,tsx,css,json,md,yaml}\"",
+    "format:check": "prettier --check \"**/*.{ts,tsx,css,json,md,yaml}\"",
+    "clean": "turbo run clean"
+  },
+  "devDependencies": {
+    "prettier": "^3.9.8",
+    "turbo": "^2.11.2",
+    "typescript": "catalog:"
+  }
+}

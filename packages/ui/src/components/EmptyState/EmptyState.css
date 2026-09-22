@@ -1,0 +1,44 @@
+@layer enitt.components {
+  .enitt-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--enitt-space-2);
+    text-align: center;
+    color: var(--enitt-color-fg-subtle);
+  }
+
+  .enitt-empty--sm {
+    padding: var(--enitt-space-6) var(--enitt-space-4);
+  }
+  .enitt-empty--md {
+    padding: var(--enitt-space-10) var(--enitt-space-4);
+  }
+
+  .enitt-empty__icon {
+    font-size: var(--enitt-space-8);
+    color: var(--enitt-color-fg-disabled);
+  }
+  .enitt-empty__icon svg {
+    inline-size: 1em;
+    block-size: 1em;
+  }
+
+  .enitt-empty__title {
+    margin: 0;
+    font-size: var(--enitt-font-size-md);
+    font-weight: var(--enitt-font-weight-medium);
+    color: var(--enitt-color-fg-muted);
+  }
+
+  .enitt-empty__description {
+    margin: 0;
+    max-inline-size: 36ch;
+    font-size: var(--enitt-font-size-sm);
+  }
+
+  .enitt-empty__action {
+    margin-block-start: var(--enitt-space-2);
+  }
+}

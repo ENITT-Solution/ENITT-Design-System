@@ -1,0 +1,108 @@
+@layer enitt.components {
+  .enitt-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--enitt-space-2);
+    border: var(--enitt-border-width-thin) solid transparent;
+    border-radius: var(--enitt-radius-md);
+    font-family: inherit;
+    font-weight: var(--enitt-font-weight-medium);
+    line-height: 1;
+    white-space: nowrap;
+    cursor: pointer;
+    user-select: none;
+    transition:
+      background-color var(--enitt-duration-fast) var(--enitt-easing-standard),
+      border-color var(--enitt-duration-fast) var(--enitt-easing-standard),
+      color var(--enitt-duration-fast) var(--enitt-easing-standard);
+  }
+
+  .enitt-btn:disabled {
+    cursor: not-allowed;
+    background-color: var(--enitt-color-bg-disabled);
+    border-color: transparent;
+    color: var(--enitt-color-fg-disabled);
+  }
+
+  /* ── 크기 ─────────────────────────────────────────────── */
+  .enitt-btn--sm {
+    block-size: var(--enitt-size-control-sm);
+    padding-inline: var(--enitt-space-2_5);
+    font-size: var(--enitt-font-size-sm);
+  }
+  .enitt-btn--md {
+    block-size: var(--enitt-size-control-md);
+    padding-inline: var(--enitt-space-3);
+    font-size: var(--enitt-font-size-md);
+  }
+  .enitt-btn--lg {
+    block-size: var(--enitt-size-control-lg);
+    padding-inline: var(--enitt-space-4);
+    font-size: var(--enitt-font-size-lg);
+  }
+
+  .enitt-btn--icon-only {
+    padding-inline: 0;
+    aspect-ratio: 1;
+  }
+
+  .enitt-btn--full {
+    inline-size: 100%;
+  }
+
+  /* ── 변형 ─────────────────────────────────────────────── */
+  .enitt-btn--solid:not(:disabled) {
+    background-color: var(--enitt-color-accent-solid);
+    color: var(--enitt-color-fg-on-accent);
+  }
+  .enitt-btn--solid:not(:disabled):hover {
+    background-color: var(--enitt-color-accent-solid-hover);
+  }
+  .enitt-btn--solid:not(:disabled):active {
+    background-color: var(--enitt-color-accent-solid-active);
+  }
+
+  .enitt-btn--outline:not(:disabled) {
+    background-color: var(--enitt-color-bg-surface);
+    border-color: var(--enitt-color-border-default);
+    color: var(--enitt-color-fg-default);
+  }
+  .enitt-btn--outline:not(:disabled):hover {
+    border-color: var(--enitt-color-border-strong);
+    background-color: var(--enitt-color-bg-hover);
+  }
+  .enitt-btn--outline:not(:disabled):active {
+    background-color: var(--enitt-color-bg-active);
+  }
+
+  .enitt-btn--ghost:not(:disabled) {
+    background-color: transparent;
+    color: var(--enitt-color-fg-muted);
+  }
+  .enitt-btn--ghost:not(:disabled):hover {
+    background-color: var(--enitt-color-bg-hover);
+    color: var(--enitt-color-fg-default);
+  }
+  .enitt-btn--ghost:not(:disabled):active {
+    background-color: var(--enitt-color-bg-active);
+  }
+
+  /* 되돌릴 수 없는 조작(차단기 개방, 설정 삭제 등)에만 쓴다 */
+  .enitt-btn--danger:not(:disabled) {
+    background-color: var(--enitt-color-status-critical);
+    color: var(--enitt-color-fg-on-accent);
+  }
+  .enitt-btn--danger:not(:disabled):hover {
+    filter: brightness(0.92);
+  }
+
+  .enitt-btn__icon {
+    display: inline-flex;
+    font-size: var(--enitt-size-icon-md);
+  }
+
+  .enitt-btn__label {
+    display: inline-block;
+  }
+}

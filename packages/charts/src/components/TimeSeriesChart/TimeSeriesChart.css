@@ -1,0 +1,153 @@
+@layer enitt.components {
+  .enitt-tschart {
+    position: relative;
+    inline-size: 100%;
+    min-inline-size: 0;
+  }
+
+  .enitt-tschart__svg {
+    display: block;
+    inline-size: 100%;
+    touch-action: none;
+  }
+
+  /* ── 차트 크롬: 데이터보다 뒤로 물러난다 ─────────────────── */
+  .enitt-tschart__grid {
+    stroke: var(--enitt-color-chart-grid);
+    stroke-width: 1;
+  }
+
+  .enitt-tschart__axis-label {
+    fill: var(--enitt-color-fg-subtle);
+    font-family: var(--enitt-font-family-sans);
+    font-size: var(--enitt-font-size-2xs);
+  }
+
+  .enitt-tschart__axis-label--y {
+    font-variant-numeric: tabular-nums;
+  }
+
+  .enitt-tschart__empty {
+    fill: var(--enitt-color-fg-disabled);
+    font-family: var(--enitt-font-family-sans);
+    font-size: var(--enitt-font-size-sm);
+  }
+
+  /* ── 데이터 마크 ──────────────────────────────────────── */
+  .enitt-tschart__line {
+    fill: none;
+    stroke: var(--series-color);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .enitt-tschart__area {
+    fill: var(--series-color);
+    stroke: none;
+    opacity: 0.14;
+  }
+
+  /* ── 임계선: 점선 + 상태색 ─────────────────────────────── */
+  .enitt-tschart__threshold {
+    stroke: var(--enitt-color-chart-threshold);
+    stroke-width: 1.5;
+    stroke-dasharray: 5 4;
+    opacity: 0.85;
+  }
+  .enitt-tschart__threshold--warning {
+    stroke: var(--enitt-color-status-warning);
+  }
+  .enitt-tschart__threshold--serious {
+    stroke: var(--enitt-color-status-serious);
+  }
+  .enitt-tschart__threshold--critical {
+    stroke: var(--enitt-color-status-critical);
+  }
+  .enitt-tschart__threshold--info {
+    stroke: var(--enitt-color-status-info);
+  }
+  .enitt-tschart__threshold--normal {
+    stroke: var(--enitt-color-status-normal);
+  }
+
+  .enitt-tschart__threshold-label {
+    fill: var(--enitt-color-fg-subtle);
+    font-family: var(--enitt-font-family-sans);
+    font-size: var(--enitt-font-size-2xs);
+    font-weight: var(--enitt-font-weight-medium);
+  }
+
+  /* ── 크로스헤어 ───────────────────────────────────────── */
+  .enitt-tschart__crosshair {
+    stroke: var(--enitt-color-fg-subtle);
+    stroke-width: 1;
+    stroke-dasharray: 3 3;
+  }
+
+  /* 표면 색 링 — 여러 계열이 겹쳐도 점이 서로 분리돼 보인다 */
+  .enitt-tschart__dot {
+    fill: var(--series-color);
+    stroke: var(--enitt-color-chart-surface);
+    stroke-width: 2;
+  }
+
+  /* ── 툴팁 ─────────────────────────────────────────────── */
+  .enitt-tschart__tooltip {
+    position: absolute;
+    inset-block-start: var(--enitt-space-3);
+    z-index: var(--enitt-z-index-tooltip);
+    min-inline-size: 9rem;
+    padding: var(--enitt-space-2) var(--enitt-space-2_5);
+    background-color: var(--enitt-color-bg-raised);
+    border: var(--enitt-border-width-thin) solid var(--enitt-color-border-default);
+    border-radius: var(--enitt-radius-md);
+    box-shadow: var(--enitt-shadow-md);
+    font-size: var(--enitt-font-size-xs);
+    pointer-events: none;
+  }
+
+  .enitt-tschart__tooltip-time {
+    margin-block-end: var(--enitt-space-1_5);
+    padding-block-end: var(--enitt-space-1_5);
+    border-block-end: var(--enitt-border-width-thin) solid var(--enitt-color-border-subtle);
+    color: var(--enitt-color-fg-subtle);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .enitt-tschart__tooltip-row {
+    display: flex;
+    align-items: baseline;
+    gap: var(--enitt-space-1_5);
+    padding-block: 1px;
+  }
+
+  /* 툴팁 밀도에서 사각형 칩은 라벨 자리에 놓인 데이터 잉크다 — 짧은 선으로 대신한다 */
+  .enitt-tschart__tooltip-key {
+    flex: none;
+    inline-size: 0.625rem;
+    block-size: 0.125rem;
+    border-radius: var(--enitt-radius-full);
+    background-color: var(--series-color);
+    align-self: center;
+  }
+
+  /* 값이 먼저 눈에 들어와야 한다 */
+  .enitt-tschart__tooltip-value {
+    font-weight: var(--enitt-font-weight-semibold);
+    color: var(--enitt-color-fg-default);
+    margin-inline-start: auto;
+    order: 3;
+  }
+
+  .enitt-tschart__tooltip-label {
+    color: var(--enitt-color-fg-subtle);
+    order: 2;
+    white-space: nowrap;
+  }
+
+  .enitt-tschart__legend {
+    margin-block-start: var(--enitt-space-2);
+    padding-inline-start: 56px; /* y축 라벨 폭과 맞춘다 */
+  }
+}

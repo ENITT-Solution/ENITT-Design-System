@@ -1,0 +1,23 @@
+/* Storybook 캔버스가 토큰 배경을 쓰도록 맞춘다 */
+body,
+.sb-show-main {
+  background-color: var(--enitt-color-bg-canvas) !important;
+}
+
+.sb-canvas {
+  min-block-size: 100%;
+  padding: var(--enitt-space-1);
+}
+
+.sb-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--enitt-space-3);
+}
+
+.sb-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--enitt-space-4);
+}

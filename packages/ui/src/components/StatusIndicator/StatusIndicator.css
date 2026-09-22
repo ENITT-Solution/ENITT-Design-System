@@ -1,0 +1,89 @@
+@layer enitt.components {
+  .enitt-status {
+    --status-color: var(--enitt-color-status-unknown);
+    --status-dot: 0.5rem;
+
+    display: inline-flex;
+    align-items: center;
+    gap: var(--enitt-space-2);
+    color: var(--enitt-color-fg-default);
+    line-height: 1;
+  }
+
+  .enitt-status--sm {
+    --status-dot: 0.4375rem;
+    font-size: var(--enitt-font-size-xs);
+  }
+  .enitt-status--md {
+    --status-dot: 0.5rem;
+    font-size: var(--enitt-font-size-sm);
+  }
+  .enitt-status--lg {
+    --status-dot: 0.625rem;
+    font-size: var(--enitt-font-size-md);
+  }
+
+  .enitt-status__dot {
+    position: relative;
+    flex: none;
+    inline-size: var(--status-dot);
+    block-size: var(--status-dot);
+    border-radius: var(--enitt-radius-full);
+    background-color: var(--status-color);
+  }
+
+  .enitt-status--normal {
+    --status-color: var(--enitt-color-status-normal);
+  }
+  .enitt-status--info {
+    --status-color: var(--enitt-color-status-info);
+  }
+  .enitt-status--warning {
+    --status-color: var(--enitt-color-status-warning);
+  }
+  .enitt-status--serious {
+    --status-color: var(--enitt-color-status-serious);
+  }
+  .enitt-status--critical {
+    --status-color: var(--enitt-color-status-critical);
+  }
+  .enitt-status--unknown {
+    --status-color: var(--enitt-color-status-unknown);
+  }
+
+  /* 불명 상태는 채우지 않고 테두리만 — 모양으로도 구분된다 */
+  .enitt-status--unknown .enitt-status__dot {
+    background-color: transparent;
+    box-shadow: inset 0 0 0 1.5px var(--status-color);
+  }
+
+  /* 점멸: 점 자체가 아니라 바깥 링이 퍼진다 — 값 읽기를 방해하지 않는다 */
+  .enitt-status--pulse .enitt-status__dot::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    box-shadow: 0 0 0 0 var(--status-color);
+    animation: enitt-status-pulse var(--enitt-duration-pulse) var(--enitt-easing-standard) infinite;
+  }
+
+  @keyframes enitt-status-pulse {
+    0% {
+      box-shadow: 0 0 0 0 color-mix(in oklab, var(--status-color) 70%, transparent);
+    }
+    70% {
+      box-shadow: 0 0 0 0.55rem color-mix(in oklab, var(--status-color) 0%, transparent);
+    }
+    100% {
+      box-shadow: 0 0 0 0 color-mix(in oklab, var(--status-color) 0%, transparent);
+    }
+  }
+
+  /* 모션을 끈 사용자에게는 정적 링으로 강조를 남긴다 */
+  @media (prefers-reduced-motion: reduce) {
+    .enitt-status--pulse .enitt-status__dot::after {
+      animation: none;
+      box-shadow: 0 0 0 3px color-mix(in oklab, var(--status-color) 30%, transparent);
+    }
+  }
+}

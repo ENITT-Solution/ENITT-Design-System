@@ -1,0 +1,84 @@
+@layer enitt.components {
+  .enitt-meter {
+    --meter-color: var(--enitt-color-status-info);
+    --meter-height: 0.5rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--enitt-space-1_5);
+    min-inline-size: 0;
+  }
+
+  .enitt-meter--sm {
+    --meter-height: 0.375rem;
+  }
+  .enitt-meter--md {
+    --meter-height: 0.5rem;
+  }
+
+  .enitt-meter--normal {
+    --meter-color: var(--enitt-color-status-normal);
+  }
+  .enitt-meter--info {
+    --meter-color: var(--enitt-color-status-info);
+  }
+  .enitt-meter--warning {
+    --meter-color: var(--enitt-color-status-warning);
+  }
+  .enitt-meter--serious {
+    --meter-color: var(--enitt-color-status-serious);
+  }
+  .enitt-meter--critical {
+    --meter-color: var(--enitt-color-status-critical);
+  }
+  .enitt-meter--unknown {
+    --meter-color: var(--enitt-color-status-unknown);
+  }
+
+  .enitt-meter__head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--enitt-space-2);
+    font-size: var(--enitt-font-size-xs);
+  }
+
+  .enitt-meter__label {
+    color: var(--enitt-color-fg-muted);
+    min-inline-size: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .enitt-meter__value {
+    color: var(--enitt-color-fg-default);
+    font-weight: var(--enitt-font-weight-medium);
+    flex: none;
+  }
+
+  .enitt-meter__track {
+    position: relative;
+    block-size: var(--meter-height);
+    border-radius: var(--enitt-radius-full);
+    /* 빈 구간도 같은 색의 옅은 단계 — 막대 전체에서 상태가 읽힌다 */
+    background-color: color-mix(in oklab, var(--meter-color) 18%, var(--enitt-color-bg-muted));
+    overflow: hidden;
+  }
+
+  .enitt-meter__fill {
+    block-size: 100%;
+    border-radius: inherit;
+    background-color: var(--meter-color);
+    transition: inline-size var(--enitt-duration-normal) var(--enitt-easing-standard);
+  }
+
+  /* 임계선 — 막대 위에 얇게 새겨 넣는다 */
+  .enitt-meter__tick {
+    position: absolute;
+    inset-block: 0;
+    inline-size: var(--enitt-border-width-thin);
+    background-color: var(--enitt-color-bg-surface);
+    opacity: 0.85;
+  }
+}

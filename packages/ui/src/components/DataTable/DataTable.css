@@ -1,0 +1,126 @@
+@layer enitt.components {
+  .enitt-table-wrap {
+    inline-size: 100%;
+    overflow: auto;
+  }
+
+  .enitt-table {
+    inline-size: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: var(--enitt-font-size-sm);
+    color: var(--enitt-color-fg-default);
+  }
+
+  .enitt-table__cell {
+    padding: var(--enitt-space-2_5) var(--enitt-space-3);
+    text-align: start;
+    vertical-align: middle;
+    border-block-end: var(--enitt-border-width-thin) solid var(--enitt-color-border-subtle);
+  }
+
+  .enitt-table--compact .enitt-table__cell {
+    padding: var(--enitt-space-1_5) var(--enitt-space-2_5);
+    font-size: var(--enitt-font-size-xs);
+  }
+
+  .enitt-table__cell--start {
+    text-align: start;
+  }
+  .enitt-table__cell--center {
+    text-align: center;
+  }
+  .enitt-table__cell--end {
+    text-align: end;
+  }
+
+  .enitt-table__head-cell {
+    font-size: var(--enitt-font-size-xs);
+    font-weight: var(--enitt-font-weight-semibold);
+    color: var(--enitt-color-fg-subtle);
+    letter-spacing: var(--enitt-letter-spacing-wide);
+    white-space: nowrap;
+    background-color: var(--enitt-color-bg-sunken);
+    border-block-end-color: var(--enitt-color-border-default);
+  }
+
+  .enitt-table--sticky .enitt-table__head-cell,
+  .enitt-table--sticky .enitt-table__severity-head {
+    position: sticky;
+    inset-block-start: 0;
+    z-index: var(--enitt-z-index-raised);
+  }
+
+  .enitt-table__sort {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--enitt-space-1);
+    padding: 0;
+    border: 0;
+    background: none;
+    font: inherit;
+    color: inherit;
+    letter-spacing: inherit;
+    cursor: pointer;
+    border-radius: var(--enitt-radius-sm);
+  }
+
+  .enitt-table__sort-icon {
+    inline-size: 1em;
+    block-size: 1em;
+    opacity: 0.35;
+    transition: transform var(--enitt-duration-fast) var(--enitt-easing-standard);
+  }
+  .enitt-table__sort-icon--asc {
+    opacity: 1;
+    transform: rotate(180deg);
+  }
+  .enitt-table__sort-icon--desc {
+    opacity: 1;
+  }
+
+  /* 행 심각도는 왼쪽 띠로만 — 배경을 물들이면 셀 안의 값이 읽기 어려워진다 */
+  .enitt-table__severity-head {
+    inline-size: 3px;
+    padding: 0;
+    background-color: var(--enitt-color-bg-sunken);
+    border-block-end: var(--enitt-border-width-thin) solid var(--enitt-color-border-default);
+  }
+
+  .enitt-table__severity-cell {
+    inline-size: 3px;
+    padding: 0;
+    background-color: transparent;
+    border-block-end: var(--enitt-border-width-thin) solid var(--enitt-color-border-subtle);
+  }
+
+  .enitt-table__row--normal .enitt-table__severity-cell {
+    background-color: var(--enitt-color-status-normal);
+  }
+  .enitt-table__row--info .enitt-table__severity-cell {
+    background-color: var(--enitt-color-status-info);
+  }
+  .enitt-table__row--warning .enitt-table__severity-cell {
+    background-color: var(--enitt-color-status-warning);
+  }
+  .enitt-table__row--serious .enitt-table__severity-cell {
+    background-color: var(--enitt-color-status-serious);
+  }
+  .enitt-table__row--critical .enitt-table__severity-cell {
+    background-color: var(--enitt-color-status-critical);
+  }
+  .enitt-table__row--unknown .enitt-table__severity-cell {
+    background-color: var(--enitt-color-status-unknown);
+  }
+
+  .enitt-table--interactive .enitt-table__row {
+    cursor: pointer;
+  }
+  .enitt-table--interactive .enitt-table__row:hover {
+    background-color: var(--enitt-color-bg-hover);
+  }
+
+  .enitt-table__row--selected {
+    background-color: var(--enitt-color-bg-selected);
+  }
+}

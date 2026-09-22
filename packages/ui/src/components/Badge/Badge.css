@@ -1,0 +1,89 @@
+@layer enitt.components {
+  .enitt-badge {
+    /* 심각도별로 이 세 변수만 갈아끼운다 */
+    --badge-fg: var(--enitt-color-fg-muted);
+    --badge-bg: var(--enitt-color-bg-muted);
+    --badge-mark: var(--enitt-color-fg-subtle);
+
+    display: inline-flex;
+    align-items: center;
+    gap: var(--enitt-space-1_5);
+    border: var(--enitt-border-width-thin) solid transparent;
+    border-radius: var(--enitt-radius-full);
+    font-weight: var(--enitt-font-weight-medium);
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  .enitt-badge--sm {
+    padding: var(--enitt-space-1) var(--enitt-space-2);
+    font-size: var(--enitt-font-size-2xs);
+  }
+  .enitt-badge--md {
+    padding: var(--enitt-space-1) var(--enitt-space-2_5);
+    font-size: var(--enitt-font-size-xs);
+  }
+
+  .enitt-badge__icon {
+    inline-size: 1.15em;
+    block-size: 1.15em;
+    flex: none;
+    color: var(--badge-mark);
+  }
+
+  /* ── 심각도 ───────────────────────────────────────────── */
+  .enitt-badge--normal {
+    --badge-fg: var(--enitt-color-status-fg-normal);
+    --badge-bg: var(--enitt-color-status-bg-normal);
+    --badge-mark: var(--enitt-color-status-normal);
+  }
+  .enitt-badge--info {
+    --badge-fg: var(--enitt-color-status-fg-info);
+    --badge-bg: var(--enitt-color-status-bg-info);
+    --badge-mark: var(--enitt-color-status-info);
+  }
+  .enitt-badge--warning {
+    --badge-fg: var(--enitt-color-status-fg-warning);
+    --badge-bg: var(--enitt-color-status-bg-warning);
+    --badge-mark: var(--enitt-color-status-fg-warning);
+  }
+  .enitt-badge--serious {
+    --badge-fg: var(--enitt-color-status-fg-serious);
+    --badge-bg: var(--enitt-color-status-bg-serious);
+    --badge-mark: var(--enitt-color-status-fg-serious);
+  }
+  .enitt-badge--critical {
+    --badge-fg: var(--enitt-color-status-fg-critical);
+    --badge-bg: var(--enitt-color-status-bg-critical);
+    --badge-mark: var(--enitt-color-status-critical);
+  }
+  .enitt-badge--unknown {
+    --badge-fg: var(--enitt-color-status-fg-unknown);
+    --badge-bg: var(--enitt-color-status-bg-unknown);
+    --badge-mark: var(--enitt-color-status-unknown);
+  }
+
+  /* ── 외형 ─────────────────────────────────────────────── */
+  .enitt-badge--subtle {
+    background-color: var(--badge-bg);
+    color: var(--badge-fg);
+  }
+
+  .enitt-badge--outline {
+    border-color: currentColor;
+    color: var(--badge-fg);
+  }
+
+  .enitt-badge--solid {
+    background-color: var(--badge-mark);
+    color: var(--enitt-color-fg-on-accent);
+  }
+  .enitt-badge--solid .enitt-badge__icon {
+    color: currentColor;
+  }
+  /* 밝은 노랑/주황 위에서는 흰 글씨가 읽히지 않는다 — 어두운 글씨로 뒤집는다 */
+  .enitt-badge--solid.enitt-badge--warning,
+  .enitt-badge--solid.enitt-badge--serious {
+    color: var(--enitt-palette-neutral-1000);
+  }
+}

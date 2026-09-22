@@ -1,0 +1,90 @@
+@layer enitt.components {
+  .enitt-stat {
+    display: flex;
+    flex-direction: column;
+    gap: var(--enitt-space-1);
+    min-inline-size: 0;
+  }
+
+  .enitt-stat__label {
+    font-size: var(--enitt-font-size-xs);
+    font-weight: var(--enitt-font-weight-medium);
+    color: var(--enitt-color-fg-subtle);
+    letter-spacing: var(--enitt-letter-spacing-wide);
+  }
+
+  .enitt-stat__value-row {
+    display: flex;
+    align-items: baseline;
+    gap: var(--enitt-space-1_5);
+    min-inline-size: 0;
+  }
+
+  .enitt-stat__status {
+    align-self: center;
+  }
+
+  /*
+   * 값에는 tabular-nums 를 쓰지 않는다 — 큰 숫자에서 모든 자릿수를 '0' 폭으로
+   * 맞추면 '121' 같은 값이 헐거워 보인다. 자릿수 정렬은 표의 몫이다.
+   */
+  .enitt-stat__value {
+    font-size: var(--enitt-font-size-3xl);
+    font-weight: var(--enitt-font-weight-semibold);
+    line-height: var(--enitt-line-height-tight);
+    color: var(--enitt-color-fg-default);
+    overflow-wrap: anywhere;
+  }
+
+  .enitt-stat__unit {
+    font-size: var(--enitt-font-size-md);
+    color: var(--enitt-color-fg-subtle);
+  }
+
+  /* 화면당 하나 — 대시보드가 이끄는 숫자 */
+  .enitt-stat--hero .enitt-stat__value {
+    font-size: var(--enitt-font-size-5xl);
+  }
+  .enitt-stat--hero .enitt-stat__unit {
+    font-size: var(--enitt-font-size-xl);
+  }
+
+  .enitt-stat__delta {
+    display: flex;
+    align-items: center;
+    gap: var(--enitt-space-1);
+    font-size: var(--enitt-font-size-xs);
+    color: var(--enitt-color-fg-subtle);
+  }
+
+  .enitt-stat__delta-icon {
+    inline-size: 1em;
+    block-size: 1em;
+    flex: none;
+  }
+
+  .enitt-stat__delta-value {
+    font-weight: var(--enitt-font-weight-medium);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .enitt-stat__delta--good {
+    color: var(--enitt-color-status-fg-normal);
+  }
+  .enitt-stat__delta--bad {
+    color: var(--enitt-color-status-fg-critical);
+  }
+  .enitt-stat__delta--neutral {
+    color: var(--enitt-color-fg-subtle);
+  }
+
+  .enitt-stat__delta--good .enitt-stat__delta-label,
+  .enitt-stat__delta--bad .enitt-stat__delta-label {
+    color: var(--enitt-color-fg-subtle);
+  }
+
+  .enitt-stat__chart {
+    margin-block-start: var(--enitt-space-2);
+    min-inline-size: 0;
+  }
+}

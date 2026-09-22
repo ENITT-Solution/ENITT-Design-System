@@ -1,0 +1,21 @@
+@layer enitt.components {
+  .enitt-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(var(--grid-min, 16rem), 100%), 1fr));
+    align-items: start;
+  }
+
+  .enitt-grid--fixed {
+    grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr));
+  }
+
+  .enitt-grid--gap-sm {
+    gap: var(--enitt-space-2);
+  }
+  .enitt-grid--gap-md {
+    gap: var(--enitt-space-4);
+  }
+  .enitt-grid--gap-lg {
+    gap: var(--enitt-space-6);
+  }
+}

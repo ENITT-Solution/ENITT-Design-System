@@ -1,0 +1,33 @@
+@layer enitt.components {
+  .enitt-sparkline {
+    display: block;
+    overflow: visible;
+  }
+
+  .enitt-sparkline--empty {
+    border-block-end: var(--enitt-border-width-thin) dashed var(--enitt-color-border-default);
+  }
+
+  /* 선은 옅게 — 타일에서 눈에 먼저 들어와야 하는 건 숫자다 */
+  .enitt-sparkline__line {
+    fill: none;
+    stroke: var(--spark-color);
+    stroke-width: 1.75;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    opacity: 0.6;
+  }
+
+  .enitt-sparkline__area {
+    fill: var(--spark-color);
+    stroke: none;
+    opacity: 0.12;
+  }
+
+  /* 현재 값만 진하게 — 표면 색 링을 둘러 선과 겹쳐도 분리돼 보인다 */
+  .enitt-sparkline__last {
+    fill: var(--spark-color);
+    stroke: var(--enitt-color-chart-surface);
+    stroke-width: 1.5;
+  }
+}

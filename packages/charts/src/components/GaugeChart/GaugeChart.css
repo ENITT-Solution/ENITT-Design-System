@@ -1,0 +1,79 @@
+@layer enitt.components {
+  .enitt-gauge {
+    --gauge-color: var(--enitt-color-status-info);
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .enitt-gauge--normal {
+    --gauge-color: var(--enitt-color-status-normal);
+  }
+  .enitt-gauge--info {
+    --gauge-color: var(--enitt-color-status-info);
+  }
+  .enitt-gauge--warning {
+    --gauge-color: var(--enitt-color-status-warning);
+  }
+  .enitt-gauge--serious {
+    --gauge-color: var(--enitt-color-status-serious);
+  }
+  .enitt-gauge--critical {
+    --gauge-color: var(--enitt-color-status-critical);
+  }
+  .enitt-gauge--unknown {
+    --gauge-color: var(--enitt-color-status-unknown);
+  }
+
+  .enitt-gauge svg {
+    display: block;
+    overflow: visible;
+  }
+
+  /* 빈 구간도 같은 색의 옅은 단계 — 게이지 전체에서 상태가 읽힌다 */
+  .enitt-gauge__track {
+    fill: none;
+    stroke: color-mix(in oklab, var(--gauge-color) 18%, var(--enitt-color-bg-muted));
+    stroke-linecap: round;
+  }
+
+  .enitt-gauge__fill {
+    fill: none;
+    stroke: var(--gauge-color);
+    stroke-linecap: round;
+    transition: d var(--enitt-duration-normal) var(--enitt-easing-standard);
+  }
+
+  .enitt-gauge__tick {
+    fill: none;
+    stroke: var(--enitt-color-bg-surface);
+    stroke-linecap: butt;
+  }
+
+  /* 게이지 가운데 — 원호와 겹치지 않도록 아래쪽 트인 자리에 놓는다 */
+  .enitt-gauge__readout {
+    position: absolute;
+    inset-block-end: 0;
+    inline-size: 100%;
+    text-align: center;
+  }
+
+  /*
+   * 큰 숫자에는 tabular-nums 를 쓰지 않는다 — 자릿수 폭을 강제로 맞추면
+   * 헐거워 보인다. 세로 정렬이 필요한 건 표지 게이지가 아니다.
+   */
+  .enitt-gauge__value {
+    font-size: var(--enitt-font-size-2xl);
+    font-weight: var(--enitt-font-weight-semibold);
+    line-height: var(--enitt-line-height-tight);
+    color: var(--enitt-color-fg-default);
+  }
+
+  .enitt-gauge__label {
+    margin-block-start: var(--enitt-space-0_5);
+    font-size: var(--enitt-font-size-xs);
+    color: var(--enitt-color-fg-subtle);
+  }
+}
