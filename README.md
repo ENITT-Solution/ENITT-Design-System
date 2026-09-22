@@ -1,8 +1,7 @@
 # ENITT Design System
 
-> **`feature/diagram` 브랜치** — `main` 의 도메인 중립 시스템 위에 전력 계통도를
-> **도메인 팩**으로 얹어 보는 실험 브랜치입니다. 확장 방식이 옳은지 확인하는 것이 목적이고,
-> 결론이 나면 `main` 병합 여부를 정합니다.
+> **`feature/diagram` 브랜치** — 도메인 중립 시스템에 범용 노드·링크 다이어그램을
+> 추가하는 작업 브랜치입니다.
 
 에니트 디자인 시스템 — **모니터링·관제 성격의 웹 화면**을 위한 도메인 중립 컴포넌트 모음입니다.
 
@@ -18,6 +17,7 @@
 | `@enitt/core`           | 공통 타입, 포매터, 기하·스케일 유틸. **React 무관**                | —                |
 | `@enitt/ui`             | 모니터링 화면용 React 컴포넌트 (패널·KPI 타일·표·경보·상태 표시등) | tokens, core     |
 | `@enitt/charts`         | SVG 차트 (스파크라인·시계열·게이지). 외부 차트 라이브러리 없음     | tokens, core, ui |
+| `@enitt/diagram`        | 범용 SVG 다이어그램 (노드·링크·심볼·팬/줌)                         | tokens, core, ui |
 | `@enitt/storybook` (앱) | 문서·플레이그라운드                                                | 전부             |
 
 의존 방향은 한 방향입니다: `tokens → core → ui → { charts, diagram }`.
@@ -82,61 +82,31 @@ React 18.3 / 19 둘 다 peer 로 받습니다. 번들에 React 를 넣지 않으
 
 ---
 
+## 범용 다이어그램
+
+`@enitt/diagram`은 업무 영역을 가정하지 않습니다. 노드와 링크, 좌표, 상태만 전달하면 흐름도·구성도·프로세스 맵을 SVG로 렌더링합니다.
+
+```tsx
+import { DiagramCanvas, type Diagram } from '@enitt/diagram';
+
+const diagram: Diagram = {
+  nodes: [
+    { id: 'start', type: 'start', x: 80, y: 120, label: '시작' },
+    { id: 'review', type: 'decision', x: 240, y: 120, label: '검토' },
+  ],
+  links: [{ id: 'next', from: 'start:right', to: 'review:left', direction: 'forward' }],
+};
+
+<DiagramCanvas diagram={diagram} />;
+```
+
+기본 심볼은 흐름도에서 자주 쓰는 `process`, `decision`, `database`, `document`, `start`, `end` 등으로 구성됩니다. 앱별 심볼은 `registerSymbol()`로 추가합니다. 상태 역시 전력 상태가 아니라 `active`, `success`, `warning`, `critical`, `muted` 같은 공통 시각 상태만 제공합니다.
+
+자세한 내용은 [`packages/diagram/README.md`](packages/diagram/README.md)에서 확인할 수 있습니다.
+
 ## 도메인 확장
 
-업무 개념은 코어에 넣지 않습니다. 확장 지점이 세 군데 있습니다.
-
-**타입** — `@enitt/core` 의 `Severity` 를 재료로 도메인 상태 타입을 정의합니다.
-
-```ts
-import type { Severity } from '@enitt/core';
-
-export type PumpState = 'running' | 'stopped' | 'fault' | 'unknown';
-export const pumpSeverity = (state: PumpState): Severity =>
-  state === 'fault' ? 'critical' : state === 'running' ? 'normal' : 'unknown';
-```
-
-**토큰 프리셋** — `@enitt/tokens` 의 `src/presets.json` 에 속성 프리셋을 선언하면
-`[data-enitt-<속성>='<값>']` 으로 켜지는 토큰 묶음이 생깁니다. 파일이 없으면 아무것도 나오지 않으므로 코어는 도메인을 알 필요가 없습니다.
-
-```json
-{
-  "power-convention": {
-    "ko-legacy": {
-      "color.power.energized": "color.power-ko.energized",
-      "color.power.deenergized": "color.power-ko.deenergized"
-    }
-  }
-}
-```
-
-앱에서는 속성만 던집니다.
-
-```tsx
-<ThemeProvider presets={{ 'power-convention': 'ko-legacy' }}>
-```
-
-**컴포넌트** — 도메인 전용 렌더러는 자기 패키지에 둡니다.
-
-### 첫 사례: 전력 계통도
-
-`@enitt/diagram` 이 이 확장 방식의 첫 사례입니다.
-
-- **타입** — `PowerState` `SwitchState` 를 패키지가 소유하고, `powerSeverity()` 로 코어의 `Severity` 에 이어 붙입니다.
-- **토큰** — `--enitt-color-power-*` 와 `power-convention` 프리셋을 tokens 패키지에 선언합니다.
-- **컴포넌트** — `SingleLineDiagram` 과 심볼 13종을 자기 패키지에 둡니다.
-
-```tsx
-import { SingleLineDiagram, powerSeverity } from '@enitt/diagram';
-
-<SingleLineDiagram diagram={{ nodes, links }} showFlow />;
-```
-
-도면은 **데이터**입니다. 좌표와 상태만 주면 렌더러가 그리고, 모선에 연결된 인출선은 상대 노드의 x 위치로 수직 투영돼 제자리에서 갈라집니다. 상태는 색과 모양 두 채널로 나갑니다 — 차단기 투입은 채워진 사각형, 개방은 빈 사각형, 단로기 개방은 칼날이 실제로 벌어집니다.
-
-자세한 내용은 [`packages/diagram/README.md`](packages/diagram/README.md).
-
-**아직 정하지 못한 것** — 계통도를 정식 패키지로 승격할지, 별도 저장소로 뺄지. 지금 구조의 마찰점은 도메인 토큰(`color.power.*`)이 코어 tokens 패키지의 `semantic.json` 에 들어간다는 점입니다. 토큰 팩을 패키지 밖에서 주입하는 방법을 더 볼 필요가 있습니다.
+업무 개념은 코어와 다이어그램에 넣지 않습니다. 앱이나 별도 도메인 패키지가 자기 상태를 공통 `Severity` 또는 `DiagramStatus`로 매핑하고, 필요한 심볼을 등록합니다.
 
 ---
 
@@ -228,7 +198,7 @@ pnpm --filter @enitt/tokens generate
 │   ├── core/       타입 · 포매터 · 기하
 │   ├── ui/         React 컴포넌트
 │   ├── charts/     SVG 차트
-│   └── diagram/    계통도 렌더러 (도메인 팩)
+│   └── diagram/    범용 노드·링크 다이어그램
 ├── apps/
 │   └── storybook/  문서 · 플레이그라운드
 ├── pnpm-workspace.yaml   워크스페이스 + 버전 카탈로그
@@ -242,10 +212,10 @@ pnpm --filter @enitt/tokens generate
 
 ## 브랜치
 
-| 브랜치            | 내용                                            |
-| ----------------- | ----------------------------------------------- |
-| `main`            | 도메인 중립 디자인 시스템                       |
-| `feature/diagram` | 전력 계통도(단선결선도) 렌더러 — 도메인 팩 실험 |
+| 브랜치            | 내용                             |
+| ----------------- | -------------------------------- |
+| `main`            | 도메인 중립 디자인 시스템        |
+| `feature/diagram` | 범용 노드·링크 다이어그램 렌더러 |
 
 ---
 

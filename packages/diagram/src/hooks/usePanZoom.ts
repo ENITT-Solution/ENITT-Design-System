@@ -49,7 +49,7 @@ export interface PanZoomApi {
 const IDENTITY: Transform = { x: 0, y: 0, k: 1 };
 
 /**
- * 계통도용 팬/줌.
+ * 다이어그램용 팬/줌.
  *
  * 줌은 **커서를 중심으로** 확대된다 — 확대할 때마다 보고 있던 지점이 화면 밖으로
  * 달아나면 도면을 읽을 수 없기 때문이다.

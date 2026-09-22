@@ -241,44 +241,6 @@
         "light": "{color.neutral.0}",
         "dark": "{color.neutral.900}"
       }
-    },
-    "power": {
-      "$description": "계통도 도메인 팩 — 기기/선로의 전기적 상태. 색만으로 구분하지 않으며 선 패턴·라벨을 함께 쓴다.",
-      "energized": {
-        "light": "{color.green.600}",
-        "dark": "{color.green.400}"
-      },
-      "deenergized": {
-        "light": "{color.neutral.600}",
-        "dark": "{color.neutral.400}"
-      },
-      "fault": {
-        "light": "{color.red.600}",
-        "dark": "{color.red.300}"
-      },
-      "grounded": {
-        "light": "{color.amber.700}",
-        "dark": "{color.amber.400}"
-      },
-      "maintenance": {
-        "light": "{color.violet.600}",
-        "dark": "{color.violet.300}"
-      },
-      "unknown": {
-        "light": "{color.neutral.550}",
-        "dark": "{color.neutral.500}"
-      }
-    },
-    "power-ko": {
-      "$description": "국내 전력 현장 관행(충전=적색, 정전=녹색). presets.json 의 power-convention=ko-legacy 가 이 값을 가리킨다.",
-      "energized": {
-        "light": "{color.red.600}",
-        "dark": "{color.red.300}"
-      },
-      "deenergized": {
-        "light": "{color.green.600}",
-        "dark": "{color.green.400}"
-      }
     }
   },
   "shadow": {

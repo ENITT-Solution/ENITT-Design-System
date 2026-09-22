@@ -12,7 +12,7 @@ const registry = new Map<string, SymbolDefinition>(Object.entries(BUILTIN_SYMBOL
 
 /**
  * 심볼을 등록한다. 같은 이름으로 다시 등록하면 덮어쓴다 —
- * 발주처 표준 심볼로 기본 제공 심볼을 갈아끼울 때 쓴다.
+ * 제품별 심볼로 기본 제공 심볼을 교체할 때도 쓸 수 있다.
  */
 export function registerSymbol(type: SymbolType, definition: SymbolDefinition): void {
   registry.set(type, definition);

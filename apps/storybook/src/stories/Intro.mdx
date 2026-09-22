@@ -10,17 +10,18 @@ import { Meta } from '@storybook/addon-docs/blocks';
 
 ## 패키지
 
-| 패키지 | 역할 |
-|---|---|
-| `@enitt/tokens` | 디자인 토큰 단일 소스 (JSON → CSS 변수 + TS 상수) |
-| `@enitt/core` | 공통 타입 · 포매터 · 기하 유틸 (React 무관) |
-| `@enitt/ui` | 모니터링 화면용 React 컴포넌트 |
-| `@enitt/charts` | SVG 차트 (스파크라인 · 시계열 · 게이지) |
+| 패키지           | 역할                                              |
+| ---------------- | ------------------------------------------------- |
+| `@enitt/tokens`  | 디자인 토큰 단일 소스 (JSON → CSS 변수 + TS 상수) |
+| `@enitt/core`    | 공통 타입 · 포매터 · 기하 유틸 (React 무관)       |
+| `@enitt/ui`      | 모니터링 화면용 React 컴포넌트                    |
+| `@enitt/charts`  | SVG 차트 (스파크라인 · 시계열 · 게이지)           |
+| `@enitt/diagram` | 범용 SVG 다이어그램 (노드 · 링크 · 심볼 · 팬/줌)  |
 
 ## 설치
 
 ```bash
-pnpm add @enitt/tokens @enitt/ui @enitt/charts
+pnpm add @enitt/tokens @enitt/ui @enitt/charts @enitt/diagram
 ```
 
 ```tsx
@@ -28,19 +29,12 @@ pnpm add @enitt/tokens @enitt/ui @enitt/charts
 import '@enitt/tokens/tokens.css';
 import '@enitt/ui/styles.css';
 import '@enitt/charts/styles.css';
+import '@enitt/diagram/styles.css';
 ```
 
-## 도메인 확장
+## 범용 다이어그램
 
-업무 개념은 코어에 넣지 않고 별도 패키지로 얹습니다.
-
-- **타입** — `Severity` 를 재료로 도메인 상태 타입을 정의합니다.
-- **토큰** — `@enitt/tokens` 의 `src/presets.json` 에 속성 프리셋을 추가하면
-  `[data-enitt-<속성>='<값>']` 으로 켜지는 토큰 묶음이 생깁니다. 앱에서는
-  `<ThemeProvider presets={{ '...': '...' }}>` 로 전달합니다.
-- **컴포넌트** — 도메인 전용 렌더러는 자기 패키지에 둡니다.
-
-전력 계통도(단선결선도)는 이 확장 방식의 첫 사례이며 `feature/diagram` 브랜치에서 별도로 진행 중입니다.
+`@enitt/diagram`은 특정 업무 영역을 가정하지 않습니다. `DiagramCanvas`에 노드와 링크 데이터를 전달해 흐름도·구성도·프로세스 맵을 만들고, 앱 전용 심볼은 `registerSymbol()`로 추가할 수 있습니다.
 
 ## 이 문서를 보는 법
 

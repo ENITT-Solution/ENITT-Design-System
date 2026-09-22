@@ -89,17 +89,6 @@ export const 색상: Story = {
         ]}
       />
       <Group
-        title="전력 상태 (계통도 도메인 팩)"
-        items={[
-          ['가압', '--enitt-color-power-energized'],
-          ['정전', '--enitt-color-power-deenergized'],
-          ['고장', '--enitt-color-power-fault'],
-          ['접지', '--enitt-color-power-grounded'],
-          ['점검', '--enitt-color-power-maintenance'],
-          ['불명', '--enitt-color-power-unknown'],
-        ]}
-      />
-      <Group
         title="차트 계열 — 고정 순서, 순환 금지"
         items={
           Array.from({ length: 8 }, (_, i) => [

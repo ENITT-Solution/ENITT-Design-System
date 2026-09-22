@@ -8,17 +8,13 @@ import '@enitt/charts/styles.css';
 import '@enitt/diagram/styles.css';
 import './preview.css';
 
-/** 툴바에서 고른 테마와 토큰 프리셋을 문서 루트에 반영한다. */
+/** 툴바에서 고른 테마를 문서 루트에 반영한다. */
 const withTheme: Decorator = (Story, context) => {
   const theme = context.globals.theme as 'light' | 'dark';
-  const convention = context.globals.powerConvention as string;
 
   useEffect(() => {
-    const root = document.documentElement;
-    root.setAttribute('data-theme', theme);
-    // 계통도 도메인 팩이 tokens 에 선언한 프리셋 — 앱에서는 <ThemeProvider presets> 로 준다.
-    root.setAttribute('data-enitt-power-convention', convention);
-  }, [theme, convention]);
+    document.documentElement.setAttribute('data-theme', theme);
+  }, [theme]);
 
   return (
     <div className="enitt-app sb-canvas">
@@ -42,18 +38,6 @@ const preview: Preview = {
         dynamicTitle: true,
       },
     },
-    powerConvention: {
-      description: '계통도 색 관례 (토큰 프리셋)',
-      defaultValue: 'modern',
-      toolbar: {
-        icon: 'lightning',
-        items: [
-          { value: 'modern', title: '가압=녹색 (기본)' },
-          { value: 'ko-legacy', title: '충전=적색 (국내 관행)' },
-        ],
-        dynamicTitle: true,
-      },
-    },
   },
   parameters: {
     layout: 'padded',
@@ -61,7 +45,15 @@ const preview: Preview = {
     a11y: { test: 'todo' },
     options: {
       storySort: {
-        order: ['시작하기', '기초', ['디자인 토큰', '색상'], '컴포넌트', '차트', '계통도', '패턴'],
+        order: [
+          '시작하기',
+          '기초',
+          ['디자인 토큰', '색상'],
+          '컴포넌트',
+          '차트',
+          '다이어그램',
+          '패턴',
+        ],
       },
     },
   },

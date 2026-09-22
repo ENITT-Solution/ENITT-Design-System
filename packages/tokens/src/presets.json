@@ -1,9 +1,0 @@
-{
-  "$description": "속성으로 켜는 토큰 프리셋. [data-enitt-<속성>='<값>'] 블록이 생성된다.",
-  "power-convention": {
-    "ko-legacy": {
-      "color.power.energized": "color.power-ko.energized",
-      "color.power.deenergized": "color.power-ko.deenergized"
-    }
-  }
-}

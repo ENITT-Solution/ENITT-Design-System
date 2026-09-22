@@ -1,0 +1,204 @@
+@layer enitt.components {
+  .enitt-diagram {
+    position: relative;
+    inline-size: 100%;
+    overflow: hidden;
+    background-color: var(--enitt-color-bg-surface);
+    border-radius: var(--enitt-radius-lg);
+  }
+
+  .enitt-diagram__canvas {
+    display: block;
+    inline-size: 100%;
+    block-size: 100%;
+    touch-action: none;
+    cursor: grab;
+    background-image:
+      linear-gradient(to right, var(--enitt-color-border-subtle) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--enitt-color-border-subtle) 1px, transparent 1px);
+    background-position: center;
+    background-size: 24px 24px;
+  }
+
+  .enitt-diagram__canvas--panning {
+    cursor: grabbing;
+  }
+
+  .enitt-diagram__node,
+  .enitt-diagram__link,
+  .enitt-diagram__legend li {
+    --diagram-status: var(--enitt-color-fg-muted);
+  }
+
+  .enitt-diagram__status--active {
+    --diagram-status: var(--enitt-color-status-info);
+  }
+
+  .enitt-diagram__status--success {
+    --diagram-status: var(--enitt-color-status-normal);
+  }
+
+  .enitt-diagram__status--warning {
+    --diagram-status: var(--enitt-color-status-warning);
+  }
+
+  .enitt-diagram__status--critical {
+    --diagram-status: var(--enitt-color-status-critical);
+  }
+
+  .enitt-diagram__status--muted {
+    --diagram-status: var(--enitt-color-status-unknown);
+    opacity: 0.72;
+  }
+
+  .enitt-diagram__link-line {
+    fill: none;
+    stroke: var(--diagram-status);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .enitt-diagram__link--dashed .enitt-diagram__link-line {
+    stroke-dasharray: 8 5;
+  }
+
+  .enitt-diagram__link--dotted .enitt-diagram__link-line {
+    stroke-dasharray: 2 4;
+  }
+
+  .enitt-diagram__link--selected .enitt-diagram__link-line {
+    stroke-width: 3.5;
+  }
+
+  .enitt-diagram__link-hit {
+    fill: none;
+    stroke: transparent;
+    stroke-width: 16;
+    cursor: pointer;
+  }
+
+  .enitt-diagram__link-label {
+    fill: var(--enitt-color-fg-subtle);
+    font-family: var(--enitt-font-family-sans);
+    font-size: 10px;
+    paint-order: stroke;
+    stroke: var(--enitt-color-bg-surface);
+    stroke-width: 4px;
+    stroke-linejoin: round;
+  }
+
+  .enitt-diagram__symbol {
+    color: var(--diagram-status);
+  }
+
+  .enitt-diagram__body {
+    fill: var(--enitt-color-bg-surface);
+    stroke: var(--diagram-status);
+    stroke-width: 2;
+    stroke-linejoin: round;
+  }
+
+  .enitt-diagram__body--filled {
+    fill: var(--diagram-status);
+  }
+
+  .enitt-diagram__glyph {
+    fill: none;
+    stroke: var(--diagram-status);
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .enitt-diagram__node--interactive {
+    cursor: pointer;
+  }
+
+  .enitt-diagram__node--selected .enitt-diagram__body {
+    stroke-width: 3.5;
+  }
+
+  .enitt-diagram__node:focus-visible .enitt-diagram__body {
+    stroke: var(--enitt-color-border-focus);
+    stroke-width: 3.5;
+  }
+
+  .enitt-diagram__label,
+  .enitt-diagram__sublabel,
+  .enitt-diagram__annotation {
+    font-family: var(--enitt-font-family-sans);
+    pointer-events: none;
+  }
+
+  .enitt-diagram__label {
+    fill: var(--enitt-color-fg-default);
+    font-size: 11px;
+    font-weight: var(--enitt-font-weight-semibold);
+  }
+
+  .enitt-diagram__sublabel,
+  .enitt-diagram__annotation {
+    fill: var(--enitt-color-fg-subtle);
+    font-size: 9px;
+  }
+
+  .enitt-diagram__annotation--emphasis {
+    fill: var(--enitt-color-status-fg-critical);
+    font-weight: var(--enitt-font-weight-semibold);
+  }
+
+  .enitt-diagram__missing {
+    fill: var(--enitt-color-status-bg-warning);
+    stroke: var(--enitt-color-status-warning);
+    stroke-dasharray: 4 3;
+  }
+
+  .enitt-diagram__missing-text {
+    fill: var(--enitt-color-status-fg-warning);
+    font-family: var(--enitt-font-family-sans);
+    font-size: 12px;
+    font-weight: var(--enitt-font-weight-bold);
+  }
+
+  .enitt-diagram__toolbar {
+    position: absolute;
+    inset-block-start: var(--enitt-space-3);
+    inset-inline-end: var(--enitt-space-3);
+    display: flex;
+    gap: var(--enitt-space-1);
+  }
+
+  .enitt-diagram__legend {
+    position: absolute;
+    inset-inline: 50% auto;
+    inset-block-end: var(--enitt-space-3);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--enitt-space-3);
+    align-items: center;
+    margin: 0;
+    padding: var(--enitt-space-2) var(--enitt-space-3);
+    list-style: none;
+    color: var(--enitt-color-fg-muted);
+    font-size: var(--enitt-font-size-2xs);
+    background-color: color-mix(in oklab, var(--enitt-color-bg-surface) 90%, transparent);
+    border: var(--enitt-border-width-thin) solid var(--enitt-color-border-subtle);
+    border-radius: var(--enitt-radius-md);
+    transform: translateX(-50%);
+  }
+
+  .enitt-diagram__legend li {
+    display: flex;
+    gap: var(--enitt-space-1_5);
+    align-items: center;
+  }
+
+  .enitt-diagram__legend-swatch {
+    display: block;
+    inline-size: 0.65rem;
+    block-size: 0.65rem;
+    background: var(--diagram-status);
+    border-radius: var(--enitt-radius-xs);
+  }
+}
