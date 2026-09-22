@@ -57,6 +57,7 @@
   --enitt-palette-green-700: #006300;
   --enitt-palette-amber-400: #fab219;
   --enitt-palette-amber-600: #8a5a00;
+  --enitt-palette-amber-700: #5c3a00;
   --enitt-palette-orange-400: #f0a07a;
   --enitt-palette-orange-450: #ec835a;
   --enitt-palette-orange-500: #eb6834;
@@ -214,6 +215,14 @@
   --enitt-color-chart-axis: #b9c2ce;
   --enitt-color-chart-threshold: #d03b3b;
   --enitt-color-chart-surface: #ffffff;
+  --enitt-color-power-energized: #0a7a0a;
+  --enitt-color-power-deenergized: #6b7787;
+  --enitt-color-power-fault: #c02626;
+  --enitt-color-power-grounded: #5c3a00;
+  --enitt-color-power-maintenance: #4a3aa7;
+  --enitt-color-power-unknown: #828d9d;
+  --enitt-color-power-ko-energized: #c02626;
+  --enitt-color-power-ko-deenergized: #0a7a0a;
   --enitt-shadow-xs: 0 1px 2px rgba(13, 17, 23, 0.06);
   --enitt-shadow-sm: 0 1px 3px rgba(13, 17, 23, 0.10), 0 1px 2px rgba(13, 17, 23, 0.06);
   --enitt-shadow-md: 0 4px 12px rgba(13, 17, 23, 0.10);
@@ -280,6 +289,14 @@
   --enitt-color-chart-axis: #3b4552;
   --enitt-color-chart-threshold: #e66767;
   --enitt-color-chart-surface: #161b22;
+  --enitt-color-power-energized: #2fd44f;
+  --enitt-color-power-deenergized: #a6b0bd;
+  --enitt-color-power-fault: #f08585;
+  --enitt-color-power-grounded: #fab219;
+  --enitt-color-power-maintenance: #9085e9;
+  --enitt-color-power-unknown: #8d98a8;
+  --enitt-color-power-ko-energized: #f08585;
+  --enitt-color-power-ko-deenergized: #2fd44f;
   --enitt-shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.40);
   --enitt-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.50);
   --enitt-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.55);
@@ -347,6 +364,14 @@
     --enitt-color-chart-axis: #3b4552;
     --enitt-color-chart-threshold: #e66767;
     --enitt-color-chart-surface: #161b22;
+    --enitt-color-power-energized: #2fd44f;
+    --enitt-color-power-deenergized: #a6b0bd;
+    --enitt-color-power-fault: #f08585;
+    --enitt-color-power-grounded: #fab219;
+    --enitt-color-power-maintenance: #9085e9;
+    --enitt-color-power-unknown: #8d98a8;
+    --enitt-color-power-ko-energized: #f08585;
+    --enitt-color-power-ko-deenergized: #2fd44f;
     --enitt-shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.40);
     --enitt-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.50);
     --enitt-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.55);
@@ -355,6 +380,20 @@
   }
 }
 
+
+}
+
+@layer enitt.presets {
+
+/* ── 토큰 프리셋 (src/presets.json) ── */
+[data-enitt-power-convention='ko-legacy'] {
+  --enitt-color-power-energized: var(--enitt-color-power-ko-energized);
+  --enitt-color-power-deenergized: var(--enitt-color-power-ko-deenergized);
+}
+
+}
+
+@layer enitt.tokens {
 
 
 /* ── 모션 민감 사용자 존중 ────────────────────────────────────────── */

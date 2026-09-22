@@ -13,6 +13,7 @@
   "dependencies": {
     "@enitt/charts": "workspace:*",
     "@enitt/core": "workspace:*",
+    "@enitt/diagram": "workspace:*",
     "@enitt/tokens": "workspace:*",
     "@enitt/ui": "workspace:*",
     "react": "catalog:",

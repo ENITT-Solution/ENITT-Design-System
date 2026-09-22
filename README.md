@@ -1,5 +1,9 @@
 # ENITT Design System
 
+> **`feature/diagram` 브랜치** — `main` 의 도메인 중립 시스템 위에 전력 계통도를
+> **도메인 팩**으로 얹어 보는 실험 브랜치입니다. 확장 방식이 옳은지 확인하는 것이 목적이고,
+> 결론이 나면 `main` 병합 여부를 정합니다.
+
 에니트 디자인 시스템 — **모니터링·관제 성격의 웹 화면**을 위한 도메인 중립 컴포넌트 모음입니다.
 
 특정 업무 영역(전력, 공정, 물류, 서비스 인프라)에 묶이지 않습니다. 코어가 아는 것은 "상태에는 등급이 있다", "값에는 단위가 있다", "시계열에는 결측이 있다" 정도이고, 업무 개념은 이 위에 얹는 **도메인 팩**의 몫입니다.
@@ -16,7 +20,7 @@
 | `@enitt/charts`         | SVG 차트 (스파크라인·시계열·게이지). 외부 차트 라이브러리 없음     | tokens, core, ui |
 | `@enitt/storybook` (앱) | 문서·플레이그라운드                                                | 전부             |
 
-의존 방향은 한 방향입니다: `tokens → core → ui → charts`.
+의존 방향은 한 방향입니다: `tokens → core → ui → { charts, diagram }`.
 
 ---
 
@@ -44,7 +48,7 @@ pnpm storybook      # http://localhost:6006
 ## 소비 앱에서 쓰기
 
 ```bash
-pnpm add @enitt/tokens @enitt/ui @enitt/charts
+pnpm add @enitt/tokens @enitt/ui @enitt/charts @enitt/diagram
 ```
 
 ```tsx
@@ -52,6 +56,7 @@ pnpm add @enitt/tokens @enitt/ui @enitt/charts
 import '@enitt/tokens/tokens.css';
 import '@enitt/ui/styles.css';
 import '@enitt/charts/styles.css';
+import '@enitt/diagram/styles.css';
 
 import { ThemeProvider, Panel, StatTile } from '@enitt/ui';
 import { TimeSeriesChart } from '@enitt/charts';
@@ -113,7 +118,25 @@ export const pumpSeverity = (state: PumpState): Severity =>
 
 **컴포넌트** — 도메인 전용 렌더러는 자기 패키지에 둡니다.
 
-> 전력 계통도(단선결선도)는 이 확장 방식의 첫 사례이며 **`feature/diagram` 브랜치**에서 별도로 진행 중입니다. 코어를 도메인 중립으로 유지할지, 계통도를 정식 패키지로 승격할지는 그 브랜치에서 결론을 냅니다.
+### 첫 사례: 전력 계통도
+
+`@enitt/diagram` 이 이 확장 방식의 첫 사례입니다.
+
+- **타입** — `PowerState` `SwitchState` 를 패키지가 소유하고, `powerSeverity()` 로 코어의 `Severity` 에 이어 붙입니다.
+- **토큰** — `--enitt-color-power-*` 와 `power-convention` 프리셋을 tokens 패키지에 선언합니다.
+- **컴포넌트** — `SingleLineDiagram` 과 심볼 13종을 자기 패키지에 둡니다.
+
+```tsx
+import { SingleLineDiagram, powerSeverity } from '@enitt/diagram';
+
+<SingleLineDiagram diagram={{ nodes, links }} showFlow />;
+```
+
+도면은 **데이터**입니다. 좌표와 상태만 주면 렌더러가 그리고, 모선에 연결된 인출선은 상대 노드의 x 위치로 수직 투영돼 제자리에서 갈라집니다. 상태는 색과 모양 두 채널로 나갑니다 — 차단기 투입은 채워진 사각형, 개방은 빈 사각형, 단로기 개방은 칼날이 실제로 벌어집니다.
+
+자세한 내용은 [`packages/diagram/README.md`](packages/diagram/README.md).
+
+**아직 정하지 못한 것** — 계통도를 정식 패키지로 승격할지, 별도 저장소로 뺄지. 지금 구조의 마찰점은 도메인 토큰(`color.power.*`)이 코어 tokens 패키지의 `semantic.json` 에 들어간다는 점입니다. 토큰 팩을 패키지 밖에서 주입하는 방법을 더 볼 필요가 있습니다.
 
 ---
 
@@ -204,7 +227,8 @@ pnpm --filter @enitt/tokens generate
 │   ├── tokens/     JSON 토큰 + 생성 스크립트
 │   ├── core/       타입 · 포매터 · 기하
 │   ├── ui/         React 컴포넌트
-│   └── charts/     SVG 차트
+│   ├── charts/     SVG 차트
+│   └── diagram/    계통도 렌더러 (도메인 팩)
 ├── apps/
 │   └── storybook/  문서 · 플레이그라운드
 ├── pnpm-workspace.yaml   워크스페이스 + 버전 카탈로그

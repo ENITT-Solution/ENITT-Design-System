@@ -80,6 +80,18 @@ export const tokens = {
       axis: 'var(--enitt-color-chart-axis)',
       threshold: 'var(--enitt-color-chart-threshold)',
       surface: 'var(--enitt-color-chart-surface)'
+    },
+    power: {
+      energized: 'var(--enitt-color-power-energized)',
+      deenergized: 'var(--enitt-color-power-deenergized)',
+      fault: 'var(--enitt-color-power-fault)',
+      grounded: 'var(--enitt-color-power-grounded)',
+      maintenance: 'var(--enitt-color-power-maintenance)',
+      unknown: 'var(--enitt-color-power-unknown)'
+    },
+    'power-ko': {
+      energized: 'var(--enitt-color-power-ko-energized)',
+      deenergized: 'var(--enitt-color-power-ko-deenergized)'
     }
   },
   shadow: {
@@ -238,7 +250,8 @@ export const palette = {
   },
   amber: {
     '400': '#fab219',
-    '600': '#8a5a00'
+    '600': '#8a5a00',
+    '700': '#5c3a00'
   },
   orange: {
     '400': '#f0a07a',
@@ -331,6 +344,14 @@ export const themeValues = {
     '--enitt-color-chart-axis': '#b9c2ce',
     '--enitt-color-chart-threshold': '#d03b3b',
     '--enitt-color-chart-surface': '#ffffff',
+    '--enitt-color-power-energized': '#0a7a0a',
+    '--enitt-color-power-deenergized': '#6b7787',
+    '--enitt-color-power-fault': '#c02626',
+    '--enitt-color-power-grounded': '#5c3a00',
+    '--enitt-color-power-maintenance': '#4a3aa7',
+    '--enitt-color-power-unknown': '#828d9d',
+    '--enitt-color-power-ko-energized': '#c02626',
+    '--enitt-color-power-ko-deenergized': '#0a7a0a',
     '--enitt-shadow-xs': '0 1px 2px rgba(13, 17, 23, 0.06)',
     '--enitt-shadow-sm': '0 1px 3px rgba(13, 17, 23, 0.10), 0 1px 2px rgba(13, 17, 23, 0.06)',
     '--enitt-shadow-md': '0 4px 12px rgba(13, 17, 23, 0.10)',
@@ -394,6 +415,14 @@ export const themeValues = {
     '--enitt-color-chart-axis': '#3b4552',
     '--enitt-color-chart-threshold': '#e66767',
     '--enitt-color-chart-surface': '#161b22',
+    '--enitt-color-power-energized': '#2fd44f',
+    '--enitt-color-power-deenergized': '#a6b0bd',
+    '--enitt-color-power-fault': '#f08585',
+    '--enitt-color-power-grounded': '#fab219',
+    '--enitt-color-power-maintenance': '#9085e9',
+    '--enitt-color-power-unknown': '#8d98a8',
+    '--enitt-color-power-ko-energized': '#f08585',
+    '--enitt-color-power-ko-deenergized': '#2fd44f',
     '--enitt-shadow-xs': '0 1px 2px rgba(0, 0, 0, 0.40)',
     '--enitt-shadow-sm': '0 1px 3px rgba(0, 0, 0, 0.50)',
     '--enitt-shadow-md': '0 4px 12px rgba(0, 0, 0, 0.55)',
